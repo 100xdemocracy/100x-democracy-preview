@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impact — 100× Democracy</title>
+<meta name="description" content="100× Democracy — the case for a House of Representatives at community scale.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#ede6d7;--navy:#182740;--red:#be3a2b;--red2:#d0553f;--grid:#cfc6b4;--ink2:#5b6572;--paper:#f7f2e6;--max:920px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--navy);font:18px/1.65 Barlow,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(237,230,215,.97);border-bottom:2px solid var(--navy)}
+.nav .wrap{display:flex;align-items:center;gap:18px;height:64px}
+.nav img{height:34px;display:block}
+.nav .links{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.nav a{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;padding:4px 2px;border-bottom:3px solid transparent}
+.nav a.active{border-bottom-color:var(--red);color:var(--red)}
+.nav a.join{background:var(--red);color:var(--cream);padding:8px 16px;border-bottom:none;border-radius:3px}
+/* headings */
+.pagehead{padding:44px 0 6px}
+h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(34px,5.4vw,52px);line-height:1.06;letter-spacing:.8px;text-transform:uppercase;margin:0 0 8px}
+.dek{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:20px;color:var(--red);margin:0 0 8px}
+h2{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:29px;line-height:1.18;margin:54px 0 10px;scroll-margin-top:84px}
+h3{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:20px;margin:26px 0 6px}
+p{margin:12px 0}
+main{padding-bottom:70px}
+/* components */
+.thread{display:inline-block;background:var(--red);color:var(--cream);font-family:"Barlow Semi Condensed",sans-serif;font-size:12.5px;font-weight:700;letter-spacing:2px;padding:3px 11px;border-radius:3px;margin:0 10px 0 0;vertical-align:3px}
+main.wrap > .thread{margin:44px 0 -40px;vertical-align:baseline}
+.kicker{font-size:16.5px;color:var(--ink2);font-style:italic;margin:2px 0 14px}
+.concede{border-left:4px solid var(--red2);background:var(--paper);padding:10px 16px;margin:16px 0;color:#5a3a34;font-size:17px}
+.beat{border-left:4px solid var(--navy);background:var(--paper);padding:10px 16px;margin:16px 0;color:#2c3a52;font-size:17px}
+.pointer{background:var(--paper);border:2px solid var(--navy);padding:12px 16px;margin:16px 0;font-weight:600}
+.pointer .chainlink{display:inline;margin:0}
+.truthband{background:var(--navy);color:var(--cream);padding:12px 18px;margin:60px 0 -34px;font-family:"Barlow Semi Condensed",sans-serif;font-size:16px;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+.truthband small{display:block;letter-spacing:.3px;font-weight:500;text-transform:none;color:#cfd8e8;margin-top:2px;font-size:14.5px;font-family:Barlow,sans-serif}
+.spinebox{background:var(--navy);color:var(--cream);padding:18px 22px;margin:16px 0;font-family:"Barlow Semi Condensed",sans-serif;font-size:21px;line-height:1.4;font-weight:700}
+.part{font-family:"Barlow Semi Condensed",sans-serif;font-size:13px;font-weight:800;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin:20px 0 2px}
+.chainlink{display:inline-block;margin:14px 24px 4px 0;font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;color:var(--red);font-size:17px;text-decoration:none;border-bottom:2px solid var(--red)}
+.chainlink:hover{color:var(--red2);border-bottom-color:var(--red2)}
+figure.ex{margin:22px 0;padding:18px 14px;background:var(--paper);border:1px solid var(--grid)}
+.video{position:relative;aspect-ratio:16/9;margin:22px 0;background:var(--navy)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.credit{font-size:13.5px;color:var(--ink2);margin:6px 0 0}
+details.src{background:#e4dcc8;border-left:4px solid var(--navy);margin:14px 0;font-size:14.5px}
+details.src summary{cursor:pointer;padding:7px 12px;font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;letter-spacing:.6px;color:var(--ink2)}
+details.src ul{margin:0;padding:4px 16px 12px 30px}
+details.src li{margin:8px 0}
+details.src .dns{color:var(--red)}
+details.faq{background:var(--paper);border:1px solid var(--grid);margin:10px 0;padding:0 16px}
+details.faq summary{cursor:pointer;padding:12px 0;font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:17.5px}
+details.method{font-size:15px;background:var(--paper);border:1px solid var(--grid);padding:0 14px;margin:10px 0}
+details.method summary{cursor:pointer;padding:10px 0;font-weight:700}
+/* tables */
+.mirror table,.statetable{width:100%;border-collapse:collapse;background:#fff;font-size:15.5px}
+.mirror th,.statetable th{background:var(--navy);color:var(--cream);text-align:left;padding:9px 12px;font-family:"Barlow Semi Condensed",sans-serif;letter-spacing:.6px;font-size:14px}
+.mirror td,.statetable td{border:1px solid var(--grid);padding:9px 12px;vertical-align:top}
+.mirror tr td:first-child{color:#5a3a34}
+.mirror tr td:last-child{font-weight:600}
+.statewrap{max-height:520px;overflow:auto;border:1px solid var(--grid);margin:14px 0 4px}
+.statetable thead th{position:sticky;top:0}
+.statetable td:nth-child(n+2){text-align:right;font-variant-numeric:tabular-nums}
+.statetable tr.gain td{background:#e7ecdd}
+.statetable tr.loss td{background:#f3e2dd}
+.tablenote{font-size:14.5px;color:var(--ink2)}
+.gaindot,.lossdot{display:inline-block;width:12px;height:12px;margin:0 4px -1px 0}
+.gaindot{background:#e7ecdd;border:1px solid var(--grid)}.lossdot{background:#f3e2dd;border:1px solid var(--grid)}
+.figpair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+.figpair img{width:100%;height:auto;display:block;border:1px solid var(--grid)}
+.figpair figcaption{font-size:14.5px;color:var(--ink2);margin-top:6px}
+@media(max-width:700px){.figpair{grid-template-columns:1fr}}
+/* home */
+.hero{padding:56px 0 8px}
+.tagline{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:14px;letter-spacing:4px;color:var(--red)}
+.heronums{font-family:Anton,sans-serif;font-size:clamp(44px,8vw,76px);letter-spacing:1px;margin:8px 0 2px}
+.heronums .arrow,.heronums .b{color:var(--red)}
+.heronums span{margin-right:14px}
+.lede{font-size:20px;max-width:760px}
+.card{background:var(--paper);border:1px solid var(--grid);border-left:6px solid var(--red);padding:14px 18px;margin:14px 0}
+.card .t{font-family:"Barlow Semi Condensed",sans-serif;font-size:13px;font-weight:800;letter-spacing:2.4px;color:var(--red)}
+.card .prob{font-weight:600;margin:6px 0 2px}
+.card .prom{color:#2c3a52;margin:2px 0 4px}
+.card .chainlink{margin-top:6px;font-size:15.5px}
+/* sequence */
+ol.seq{counter-reset:s;list-style:none;padding:0;margin:16px 0}
+ol.seq li{counter-increment:s;margin:14px 0;padding-left:46px;position:relative}
+ol.seq li::before{content:counter(s);position:absolute;left:0;top:1px;width:30px;height:30px;background:var(--navy);color:var(--cream);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:15px}
+.joinblock{background:var(--red);color:var(--cream);padding:20px 24px;margin:26px 0;font-family:"Barlow Semi Condensed",sans-serif}
+.joinblock b{font-size:22px;letter-spacing:1px}
+.joinblock p{margin:6px 0 0;font-family:Barlow,sans-serif;font-size:15.5px;color:#f3d9d3}
+/* footer */
+footer{background:var(--navy);color:var(--cream);margin-top:40px}
+footer .wrap{padding:30px 0 36px}
+footer .ftag{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;letter-spacing:3px;font-size:13px;color:var(--red2)}
+footer p{font-size:14.5px;color:#cfd8e8}
+footer a{color:var(--cream)}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body>
+<nav class="nav"><div class="wrap"><a href="../index.html"><img src="../assets/logo-header.png" alt="100× Democracy — home"></a><div class="links"><a href="../the-problem/index.html">The Problem</a><a href="../the-solution/index.html">The Solution</a><a href="../how-it-works/index.html">How It Works</a><a class="active" href="../impact/index.html">Impact</a><a href="../big-questions/index.html">Big Questions</a><a href="../how-we-win/index.html">How We Win</a><a class="join" href="../how-we-win/index.html#act-now">Join</a></div></div></nav>
+<div class="pagehead wrap"><h1>Impact</h1><p class="dek">What actually changes for you, your community, and your state</p></div>
+<main class="wrap">
+<h2>Representation becomes something you can use — not just something you watch.</h2>
+<p>The last two pages explained the mechanisms. This one is the consequences, at three altitudes: your district, your state, the country. Everything below follows from one change — a district of about 7,600 people instead of 760,000 — and none of it requires anyone in power to behave better. It requires the seat to be close enough to reach and small enough to contest.</p>
+
+<h2 id="district">Your district: the seat comes within reach.</h2>
+<p class="kicker">Start at your own front door. Your district shrinks to a few neighborhoods — and the office changes character completely.</p>
+<figure class="ex"><svg viewBox="0 0 960 140" role="img" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;font-family:Barlow,sans-serif"><title>760,000 people per district today; 7,600 at 100x</title><text x="240" y="84" font-family="Anton,sans-serif" font-size="54" fill="#182740" text-anchor="middle" letter-spacing="1">≈760,000</text><text x="240" y="118" font-size="16" fill="#5b6572" text-anchor="middle" font-weight="500">people per district today</text><text x="480" y="84" font-family="Anton,sans-serif" font-size="54" fill="#be3a2b" text-anchor="middle" letter-spacing="1">→</text><text x="716" y="84" font-family="Anton,sans-serif" font-size="54" fill="#be3a2b" text-anchor="middle" letter-spacing="1">≈7,600</text><text x="716" y="118" font-size="16" fill="#5b6572" text-anchor="middle" font-weight="500">in a 100× House</text></svg></figure>
+<p>What does 7,600 people look like? In a city: a few blocks — the district fits inside a short walk. In the suburbs: a couple of subdivisions and the school between them. In the country: a small town and the roads around it — more land, same knowability. In every version, the district is a place you already navigate, not a media market.</p>
+<h3><span class="thread">SCALE</span>You can reach the seat.</h3>
+<p>Your representative can be a visible part of the community instead of a distant national figure serving hundreds of thousands. A meeting, a public forum, a neighborhood group, an organized call from constituents — these become hard to ignore. And a problem affecting one town, one workplace, one school no longer disappears inside a district of 760,000 people. It’s a meaningful share of the whole district.</p>
+<h3><span class="thread">MONEY</span>You can shape who holds it.</h3>
+<p>Participation stops meaning choosing between two finished options and starts meaning helping create the options. Neighbors can recruit a respected local person to run before money or party institutions decide who counts as viable. Direct contact, volunteers, and reputation can compete with fundraising. When a representative stops listening, organizing a credible challenge becomes realistic — and running yourself becomes imaginable for far more people than career politicians and the independently wealthy.</p>
+<h3><span class="thread">POWER</span>Your community can become a real political force.</h3>
+<p>In a district of 7,600, a few hundred organized neighbors are no longer a rounding error — they are a base that can elect, pressure, or replace a representative. The sequence is short and real: a local problem appears; residents can name exactly who’s affected; neighbors organize and make their position visible; the seat must respond, because the pressure is coming from a meaningful share of the district; and if it doesn’t respond, the community can escalate — recruit a challenger, build a campaign, replace the person in office. The seat becomes a source of power the community can actually use.</p>
+<p><span class="thread">RULES</span>And you can check all of it. Every vote your representative casts is public and attributable, every path a bill takes is traceable, and the rules that govern it are short enough to read. You don’t have to take anyone’s word for whether the system is working — you can look.</p>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>One U.S. House member represents about 760,000 people</b> — Census apportionment population / 435. <em>Supports:</em> Scale diagnosis.</li><li><b>100x districts would hold about 7,600 people</b> — internal: population / 43,500. <em>Supports:</em> The proposal; scale illustration ('one illustration, not a precise threshold'). <span class="dns"><em>Does not support:</em> A magic number</span></li></ul></details>
+
+<h2 id="state">Your state: a delegation too big to buy.</h2>
+<p class="kicker">What happens to your state’s voice in the House?</p>
+<p>It multiplies. Every state’s delegation grows roughly a hundredfold — a state with 8 seats today holds on the order of 800; California’s delegation numbers in the thousands. No state loses seats. What shifts, slightly, is <em>relative</em> share: at 43,500 seats, representation tracks population almost exactly, so the rounding luck that currently gives some small states a little extra weight — and shorts others — disappears. The table below shows every state.</p>
+<div class="statewrap"><table class="statetable"><thead><tr><th>State</th><th>2020 apportionment population</th><th>Seats today</th><th>Seats at 43,500</th><th>Relative weight change</th></tr></thead><tbody><tr><td>Alabama</td><td>5,030,053</td><td>7</td><td>661</td><td>−5.6%</td></tr><tr><td>Alaska</td><td>736,081</td><td>1</td><td>97</td><td>−3.0%</td></tr><tr><td>Arizona</td><td>7,158,923</td><td>9</td><td>941</td><td>+4.6%</td></tr><tr><td>Arkansas</td><td>3,013,756</td><td>4</td><td>396</td><td>−1.0%</td></tr><tr><td>California</td><td>39,576,757</td><td>52</td><td>5,200</td><td>+0.0%</td></tr><tr><td>Colorado</td><td>5,782,171</td><td>8</td><td>760</td><td>−5.0%</td></tr><tr><td>Connecticut</td><td>3,608,298</td><td>5</td><td>474</td><td>−5.2%</td></tr><tr class="gain"><td>Delaware</td><td>990,837</td><td>1</td><td>130</td><td>+30.0%</td></tr><tr><td>Florida</td><td>21,570,527</td><td>28</td><td>2,834</td><td>+1.2%</td></tr><tr><td>Georgia</td><td>10,725,274</td><td>14</td><td>1,409</td><td>+0.6%</td></tr><tr><td>Hawaii</td><td>1,460,137</td><td>2</td><td>192</td><td>−4.0%</td></tr><tr class="gain"><td>Idaho</td><td>1,841,377</td><td>2</td><td>242</td><td>+21.0%</td></tr><tr><td>Illinois</td><td>12,822,739</td><td>17</td><td>1,685</td><td>−0.9%</td></tr><tr><td>Indiana</td><td>6,790,280</td><td>9</td><td>892</td><td>−0.9%</td></tr><tr><td>Iowa</td><td>3,192,406</td><td>4</td><td>419</td><td>+4.8%</td></tr><tr><td>Kansas</td><td>2,940,865</td><td>4</td><td>386</td><td>−3.5%</td></tr><tr><td>Kentucky</td><td>4,509,342</td><td>6</td><td>592</td><td>−1.3%</td></tr><tr><td>Louisiana</td><td>4,661,468</td><td>6</td><td>612</td><td>+2.0%</td></tr><tr><td>Maine</td><td>1,363,582</td><td>2</td><td>179</td><td>−10.5%</td></tr><tr><td>Maryland</td><td>6,185,278</td><td>8</td><td>813</td><td>+1.6%</td></tr><tr><td>Massachusetts</td><td>7,033,469</td><td>9</td><td>924</td><td>+2.7%</td></tr><tr><td>Michigan</td><td>10,084,442</td><td>13</td><td>1,325</td><td>+1.9%</td></tr><tr><td>Minnesota</td><td>5,709,752</td><td>8</td><td>750</td><td>−6.2%</td></tr><tr><td>Mississippi</td><td>2,963,914</td><td>4</td><td>389</td><td>−2.7%</td></tr><tr><td>Missouri</td><td>6,160,281</td><td>8</td><td>809</td><td>+1.1%</td></tr><tr class="loss"><td>Montana</td><td>1,085,407</td><td>2</td><td>143</td><td>−28.5%</td></tr><tr class="loss"><td>Nebraska</td><td>1,963,333</td><td>3</td><td>258</td><td>−14.0%</td></tr><tr><td>Nevada</td><td>3,108,462</td><td>4</td><td>408</td><td>+2.0%</td></tr><tr><td>New Hampshire</td><td>1,379,089</td><td>2</td><td>181</td><td>−9.5%</td></tr><tr><td>New Jersey</td><td>9,294,493</td><td>12</td><td>1,221</td><td>+1.8%</td></tr><tr><td>New Mexico</td><td>2,120,220</td><td>3</td><td>279</td><td>−7.0%</td></tr><tr><td>New York</td><td>20,215,751</td><td>26</td><td>2,656</td><td>+2.2%</td></tr><tr><td>North Carolina</td><td>10,453,948</td><td>14</td><td>1,373</td><td>−1.9%</td></tr><tr><td>North Dakota</td><td>779,702</td><td>1</td><td>102</td><td>+2.0%</td></tr><tr><td>Ohio</td><td>11,808,848</td><td>15</td><td>1,551</td><td>+3.4%</td></tr><tr><td>Oklahoma</td><td>3,963,516</td><td>5</td><td>521</td><td>+4.2%</td></tr><tr><td>Oregon</td><td>4,241,500</td><td>6</td><td>557</td><td>−7.2%</td></tr><tr><td>Pennsylvania</td><td>13,011,844</td><td>17</td><td>1,709</td><td>+0.5%</td></tr><tr class="loss"><td>Rhode Island</td><td>1,098,163</td><td>2</td><td>144</td><td>−28.0%</td></tr><tr><td>South Carolina</td><td>5,124,712</td><td>7</td><td>673</td><td>−3.9%</td></tr><tr class="gain"><td>South Dakota</td><td>887,770</td><td>1</td><td>117</td><td>+17.0%</td></tr><tr><td>Tennessee</td><td>6,916,897</td><td>9</td><td>909</td><td>+1.0%</td></tr><tr><td>Texas</td><td>29,183,290</td><td>38</td><td>3,834</td><td>+0.9%</td></tr><tr class="gain"><td>Utah</td><td>3,275,252</td><td>4</td><td>430</td><td>+7.5%</td></tr><tr class="loss"><td>Vermont</td><td>643,503</td><td>1</td><td>85</td><td>−15.0%</td></tr><tr><td>Virginia</td><td>8,654,542</td><td>11</td><td>1,137</td><td>+3.4%</td></tr><tr><td>Washington</td><td>7,715,946</td><td>10</td><td>1,014</td><td>+1.4%</td></tr><tr class="gain"><td>West Virginia</td><td>1,795,045</td><td>2</td><td>236</td><td>+18.0%</td></tr><tr><td>Wisconsin</td><td>5,897,473</td><td>8</td><td>775</td><td>−3.1%</td></tr><tr class="loss"><td>Wyoming</td><td>577,719</td><td>1</td><td>76</td><td>−24.0%</td></tr></tbody></table></div><p class="tablenote"><span class="gaindot"></span> Largest relative gains: Delaware, Idaho, South Dakota, Utah, West Virginia. <span class="lossdot"></span> Largest relative losses: Montana, Nebraska, Rhode Island, Vermont, Wyoming.</p><details class="method"><summary>How the numbers are calculated</summary><p>The official 2020 Census apportionment population (331,108,434) — the same population basis used to divide today’s 435 seats — allocated across 43,500 seats using the Huntington-Hill method of equal proportions, the same formula the House uses today. Each state is guaranteed at least one seat. At this scale, alternative standard apportionment methods differ by only a handful of seats. Relative weight change = (state’s share of 43,500 seats ÷ state’s share of 435 seats) − 1. No state loses seats; every delegation grows roughly a hundredfold.</p></details>
+<p><span class="thread">POWER</span>The deeper change isn’t the count — it’s what the count does to leverage. A delegation of thousands can’t be whipped as a unit, bought as a unit, or traded as a unit. Your state’s voice in the House stops being a handful of careers that leadership can manage and becomes something closer to the state itself: too many independent members, answering to too many separate communities, to be anyone’s lottery ticket.</p>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>100x districts would hold about 7,600 people</b> — internal: population / 43,500. <em>Supports:</em> The proposal; scale illustration ('one illustration, not a precise threshold'). <span class="dns"><em>Does not support:</em> A magic number</span></li><li><b>State seat counts at 43,500 are computed from the official 2020 Census apportionment population (331,108,434) using the Huntington-Hill method of equal proportions — the same formula the House uses today — with every state guaranteed at least one seat</b> — U.S. Census Bureau, Apportionment Population by State: 2020 Census; audited Huntington-Hill implementation. <em>Supports:</em> The state table on Impact; per-state delegation sizes. <span class="dns"><em>Does not support:</em> Exact final counts under a different amendment formula; alternative standard methods differ by a handful of seats at this scale</span></li></ul></details>
+
+<h2 id="country">The country: a Congress ordinary people can enter.</h2>
+<p class="kicker">Now zoom all the way out, and run the district-level change everywhere at once.</p>
+<p><span class="thread">MONEY</span>The price of entry collapses in every district simultaneously. Seats that today go uncontested for lack of anyone able to raise millions become winnable by door-knocking — which means far more of the country’s races become realistically contestable, cycle after cycle. Incumbency stops being a fortress and goes back to being a record to defend.</p>
+<p><span class="thread">POWER</span>No single seat is worth buying. Influence that once needed to reach a few pivotal careers now has to persuade thousands of independent members, each answerable to a community that knows them. Concentrated money doesn’t vanish from politics — it loses its cheapest targets.</p>
+<p><span class="thread">FUNCTION</span>Legislation changes shape. With abundant paths to the floor, bills no longer pile into thousand-page omnibus vehicles as the only train leaving the station — more measures get their own vote, on their own merits, in a form short enough to read. More gets decided, in the open, by shifting coalitions instead of two locked armies.</p>
+<p>And the people in the seats change. Picture it concretely: a nurse who has watched the same problems go unaddressed for twenty years. An electrician who understands how the local economy actually works. A teacher who sees every week what families are struggling with. A warehouse supervisor, a caregiver, a small-business owner — people without fortunes or donor networks, whose communities know exactly who they are. For the first time, in 43,500 communities at once, they can look at Congress and ask a question that used to be absurd:</p>
+<figure class="ex"><svg viewBox="0 0 960 286" role="img" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;font-family:Barlow,sans-serif"><title>A nurse, an electrician, a teacher, a warehouse supervisor, a caregiver, a small-business owner</title><circle cx="105" cy="66" r="26" fill="#182740"/><path d="M71 152 q34 -44 68 0 v14 h-68 z" fill="#182740"/><text x="105" y="196" font-size="14.5" fill="#182740" text-anchor="middle" font-weight="600">Nurse</text><circle cx="255" cy="66" r="26" fill="#be3a2b"/><path d="M221 152 q34 -44 68 0 v14 h-68 z" fill="#be3a2b"/><text x="255" y="196" font-size="14.5" fill="#182740" text-anchor="middle" font-weight="600">Electrician</text><circle cx="405" cy="66" r="26" fill="#182740"/><path d="M371 152 q34 -44 68 0 v14 h-68 z" fill="#182740"/><text x="405" y="196" font-size="14.5" fill="#182740" text-anchor="middle" font-weight="600">Teacher</text><circle cx="555" cy="66" r="26" fill="#be3a2b"/><path d="M521 152 q34 -44 68 0 v14 h-68 z" fill="#be3a2b"/><text x="555" y="196" font-size="14.5" fill="#182740" text-anchor="middle" font-weight="600">Warehouse supervisor</text><circle cx="705" cy="66" r="26" fill="#182740"/><path d="M671 152 q34 -44 68 0 v14 h-68 z" fill="#182740"/><text x="705" y="196" font-size="14.5" fill="#182740" text-anchor="middle" font-weight="600">Caregiver</text><circle cx="855" cy="66" r="26" fill="#be3a2b"/><path d="M821 152 q34 -44 68 0 v14 h-68 z" fill="#be3a2b"/><text x="855" y="196" font-size="14.5" fill="#182740" text-anchor="middle" font-weight="600">Small-business owner</text><text x="480" y="262" font-family="Anton,sans-serif" font-size="44" fill="#be3a2b" text-anchor="middle" letter-spacing="1">Could I run?</text></svg></figure>
+<p>Under the current system: no realistic chance. Shrink the district to a community, and the answer changes.</p>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>100x districts would hold about 7,600 people</b> — internal: population / 43,500. <em>Supports:</em> The proposal; scale illustration ('one illustration, not a precise threshold'). <span class="dns"><em>Does not support:</em> A magic number</span></li><li><b>An illustrative competitive House campaign: ~$2.3M over 15 months (~$5,000/day raised)</b> — internal illustrative model (V3), consistent with reported competitive-race ranges. <em>Supports:</em> Money barrier anatomy. <span class="dns"><em>Does not support:</em> A universal average (label ILLUSTRATIVE on the exhibit)</span></li></ul></details>
+
+<h2 id="join">Make it real.</h2>
+<p>None of this happens on its own. Districts this small require a constitutional amendment, and amendments require a movement — one that starts with people deciding this option should exist. There is a real path, and it’s mapped on the next page.</p>
+<a class="chainlink" href="../how-we-win/index.html">How it becomes law →</a> <a class="chainlink" href="../how-we-win/index.html#act-now">Join the movement →</a>
+</main>
+<footer><div class="wrap">
+<div class="ftag">THE PEOPLE HAVE THE POWER.</div>
+<p><a href="../sources/index.html">Sources &amp; Methods</a> — every claim on this site is sourced and rated, including what our sources <em>don’t</em> prove.</p>
+<p>© 2026 100× Democracy</p>
+</div></footer>
+</body></html>

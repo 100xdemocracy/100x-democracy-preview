@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How It Works — 100× Democracy</title>
+<meta name="description" content="100× Democracy — the case for a House of Representatives at community scale.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#ede6d7;--navy:#182740;--red:#be3a2b;--red2:#d0553f;--grid:#cfc6b4;--ink2:#5b6572;--paper:#f7f2e6;--max:920px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--navy);font:18px/1.65 Barlow,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(237,230,215,.97);border-bottom:2px solid var(--navy)}
+.nav .wrap{display:flex;align-items:center;gap:18px;height:64px}
+.nav img{height:34px;display:block}
+.nav .links{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.nav a{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;padding:4px 2px;border-bottom:3px solid transparent}
+.nav a.active{border-bottom-color:var(--red);color:var(--red)}
+.nav a.join{background:var(--red);color:var(--cream);padding:8px 16px;border-bottom:none;border-radius:3px}
+/* headings */
+.pagehead{padding:44px 0 6px}
+h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(34px,5.4vw,52px);line-height:1.06;letter-spacing:.8px;text-transform:uppercase;margin:0 0 8px}
+.dek{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:20px;color:var(--red);margin:0 0 8px}
+h2{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:29px;line-height:1.18;margin:54px 0 10px;scroll-margin-top:84px}
+h3{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:20px;margin:26px 0 6px}
+p{margin:12px 0}
+main{padding-bottom:70px}
+/* components */
+.thread{display:inline-block;background:var(--red);color:var(--cream);font-family:"Barlow Semi Condensed",sans-serif;font-size:12.5px;font-weight:700;letter-spacing:2px;padding:3px 11px;border-radius:3px;margin:0 10px 0 0;vertical-align:3px}
+main.wrap > .thread{margin:44px 0 -40px;vertical-align:baseline}
+.kicker{font-size:16.5px;color:var(--ink2);font-style:italic;margin:2px 0 14px}
+.concede{border-left:4px solid var(--red2);background:var(--paper);padding:10px 16px;margin:16px 0;color:#5a3a34;font-size:17px}
+.beat{border-left:4px solid var(--navy);background:var(--paper);padding:10px 16px;margin:16px 0;color:#2c3a52;font-size:17px}
+.pointer{background:var(--paper);border:2px solid var(--navy);padding:12px 16px;margin:16px 0;font-weight:600}
+.pointer .chainlink{display:inline;margin:0}
+.truthband{background:var(--navy);color:var(--cream);padding:12px 18px;margin:60px 0 -34px;font-family:"Barlow Semi Condensed",sans-serif;font-size:16px;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+.truthband small{display:block;letter-spacing:.3px;font-weight:500;text-transform:none;color:#cfd8e8;margin-top:2px;font-size:14.5px;font-family:Barlow,sans-serif}
+.spinebox{background:var(--navy);color:var(--cream);padding:18px 22px;margin:16px 0;font-family:"Barlow Semi Condensed",sans-serif;font-size:21px;line-height:1.4;font-weight:700}
+.part{font-family:"Barlow Semi Condensed",sans-serif;font-size:13px;font-weight:800;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin:20px 0 2px}
+.chainlink{display:inline-block;margin:14px 24px 4px 0;font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;color:var(--red);font-size:17px;text-decoration:none;border-bottom:2px solid var(--red)}
+.chainlink:hover{color:var(--red2);border-bottom-color:var(--red2)}
+figure.ex{margin:22px 0;padding:18px 14px;background:var(--paper);border:1px solid var(--grid)}
+.video{position:relative;aspect-ratio:16/9;margin:22px 0;background:var(--navy)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.credit{font-size:13.5px;color:var(--ink2);margin:6px 0 0}
+details.src{background:#e4dcc8;border-left:4px solid var(--navy);margin:14px 0;font-size:14.5px}
+details.src summary{cursor:pointer;padding:7px 12px;font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;letter-spacing:.6px;color:var(--ink2)}
+details.src ul{margin:0;padding:4px 16px 12px 30px}
+details.src li{margin:8px 0}
+details.src .dns{color:var(--red)}
+details.faq{background:var(--paper);border:1px solid var(--grid);margin:10px 0;padding:0 16px}
+details.faq summary{cursor:pointer;padding:12px 0;font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:17.5px}
+details.method{font-size:15px;background:var(--paper);border:1px solid var(--grid);padding:0 14px;margin:10px 0}
+details.method summary{cursor:pointer;padding:10px 0;font-weight:700}
+/* tables */
+.mirror table,.statetable{width:100%;border-collapse:collapse;background:#fff;font-size:15.5px}
+.mirror th,.statetable th{background:var(--navy);color:var(--cream);text-align:left;padding:9px 12px;font-family:"Barlow Semi Condensed",sans-serif;letter-spacing:.6px;font-size:14px}
+.mirror td,.statetable td{border:1px solid var(--grid);padding:9px 12px;vertical-align:top}
+.mirror tr td:first-child{color:#5a3a34}
+.mirror tr td:last-child{font-weight:600}
+.statewrap{max-height:520px;overflow:auto;border:1px solid var(--grid);margin:14px 0 4px}
+.statetable thead th{position:sticky;top:0}
+.statetable td:nth-child(n+2){text-align:right;font-variant-numeric:tabular-nums}
+.statetable tr.gain td{background:#e7ecdd}
+.statetable tr.loss td{background:#f3e2dd}
+.tablenote{font-size:14.5px;color:var(--ink2)}
+.gaindot,.lossdot{display:inline-block;width:12px;height:12px;margin:0 4px -1px 0}
+.gaindot{background:#e7ecdd;border:1px solid var(--grid)}.lossdot{background:#f3e2dd;border:1px solid var(--grid)}
+.figpair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+.figpair img{width:100%;height:auto;display:block;border:1px solid var(--grid)}
+.figpair figcaption{font-size:14.5px;color:var(--ink2);margin-top:6px}
+@media(max-width:700px){.figpair{grid-template-columns:1fr}}
+/* home */
+.hero{padding:56px 0 8px}
+.tagline{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:14px;letter-spacing:4px;color:var(--red)}
+.heronums{font-family:Anton,sans-serif;font-size:clamp(44px,8vw,76px);letter-spacing:1px;margin:8px 0 2px}
+.heronums .arrow,.heronums .b{color:var(--red)}
+.heronums span{margin-right:14px}
+.lede{font-size:20px;max-width:760px}
+.card{background:var(--paper);border:1px solid var(--grid);border-left:6px solid var(--red);padding:14px 18px;margin:14px 0}
+.card .t{font-family:"Barlow Semi Condensed",sans-serif;font-size:13px;font-weight:800;letter-spacing:2.4px;color:var(--red)}
+.card .prob{font-weight:600;margin:6px 0 2px}
+.card .prom{color:#2c3a52;margin:2px 0 4px}
+.card .chainlink{margin-top:6px;font-size:15.5px}
+/* sequence */
+ol.seq{counter-reset:s;list-style:none;padding:0;margin:16px 0}
+ol.seq li{counter-increment:s;margin:14px 0;padding-left:46px;position:relative}
+ol.seq li::before{content:counter(s);position:absolute;left:0;top:1px;width:30px;height:30px;background:var(--navy);color:var(--cream);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:15px}
+.joinblock{background:var(--red);color:var(--cream);padding:20px 24px;margin:26px 0;font-family:"Barlow Semi Condensed",sans-serif}
+.joinblock b{font-size:22px;letter-spacing:1px}
+.joinblock p{margin:6px 0 0;font-family:Barlow,sans-serif;font-size:15.5px;color:#f3d9d3}
+/* footer */
+footer{background:var(--navy);color:var(--cream);margin-top:40px}
+footer .wrap{padding:30px 0 36px}
+footer .ftag{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;letter-spacing:3px;font-size:13px;color:var(--red2)}
+footer p{font-size:14.5px;color:#cfd8e8}
+footer a{color:var(--cream)}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body>
+<nav class="nav"><div class="wrap"><a href="../index.html"><img src="../assets/logo-header.png" alt="100× Democracy — home"></a><div class="links"><a href="../the-problem/index.html">The Problem</a><a href="../the-solution/index.html">The Solution</a><a class="active" href="../how-it-works/index.html">How It Works</a><a href="../impact/index.html">Impact</a><a href="../big-questions/index.html">Big Questions</a><a href="../how-we-win/index.html">How We Win</a><a class="join" href="../how-we-win/index.html#act-now">Join</a></div></div></nav>
+<div class="pagehead wrap"><h1>How It Works</h1><p class="dek">How a 43,500-member House would actually govern</p></div>
+<main class="wrap">
+<h2 id="spine">One principle runs through everything on this page.</h2>
+<div class="spinebox">Power pools everywhere. So every place power can pool gets a drain that the members themselves control.</div>
+<p>The members can route around leadership. A coalition can route around the agenda gate. The full floor can route around any panel or administrator. Nothing below is a separate clever trick; each is this one idea applied at a different altitude. If a mechanism ever fails, the drain beneath it is the design working — not the design breaking.</p>
+
+<h2 id="layers">Three layers: what’s fixed, what adapts, what merely serves.</h2>
+<p>What follows is one workable design — proof that workable designs exist — not the only one. Three layers keep that honest. The <strong>constitutional layer</strong> guarantees only what must never be capturable: community-scale districts, a House that grows with the population, every member’s equal public vote, and the drains themselves — the members’ structural power to force consideration past any gatekeeper. The <strong>foundational rulebook</strong> holds the specific numbers and definitions, changeable only by a broad supermajority of members — adjustable, but never quietly. And <strong>ordinary rules and technology</strong> — committee organization, schedules, the voting and scoring systems — stay fully adaptable: tools that serve the institution and never control it.</p>
+<p>Fixed where capture is possible. Flexible everywhere else. Experience gets to improve this design without anyone being able to steal it.</p>
+
+<span class="thread">SCALE</span>
+<h2 id="scale">Drawn as communities. Worked from communities.</h2>
+<p class="kicker">Where would 43,500 representatives actually work? Mostly where they already live.</p>
+<p>Districts are drawn to equal population along recognizable community boundaries — at 7,600 people, the lines can follow neighborhoods and towns instead of slicing through them. (Binding fair-districting rules are still required; small lines are easier to justify, not automatically honest.)</p>
+<p>Members stay based in the districts that elected them. Committee work and voting happen remotely; a few coordinating functions run in person. For most of history, legislating required gathering in one building — that constraint is simply gone, and removing it is what keeps a representative living with the same schools, roads, and local economy as the people they answer to.</p>
+<div class="beat">A working day, district edition: a constituent meeting at nine. A committee briefing at eleven. Legislation to review in the afternoon, a community meeting that evening. The phone rings — not a donor; someone whose door you knocked on.</div>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>100x districts would hold about 7,600 people</b> — internal: population / 43,500. <em>Supports:</em> The proposal; scale illustration ('one illustration, not a precise threshold'). <span class="dns"><em>Does not support:</em> A magic number</span></li></ul></details>
+<a class="chainlink" href="../impact/index.html#district">What it changes →</a>
+
+<span class="thread">MONEY</span>
+<h2 id="money">A real salary, a small office, a campaign simple enough to run with volunteers.</h2>
+<p class="kicker">What does the job pay — and who can afford to take it?</p>
+<p>A real, full-time salary. This is the one place the design deliberately does <em>not</em> copy New Hampshire: its $100-a-year model quietly restricts service to people who can afford to work free. A national House must be affordable to <em>hold</em>, not just to win — the seat has to fit a nurse’s finances, not just her reputation. And the total cost stays small: even 43,500 full salaries amount to a fraction of one percent of federal spending.</p>
+<p>Offices stay small — a district staffer or two — while deep policy expertise pools at the committee level instead of being duplicated across 43,500 private policy shops. And the rules governing a community-scale campaign are kept simple enough that ten volunteers can comply without a compliance lawyer: the legal overhead of running has to shrink with the district, or the door only looks open.</p>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>43,500 full congressional salaries ≈ a fraction of one percent of federal spending</b> — arithmetic vs. federal budget. <em>Supports:</em> Cost is the weakest objection. <span class="dns"><em>Does not support:</em> That total institutional cost (staff, systems) is trivial — scope the claim to salaries</span></li><li><b>New Hampshire's House: 400 members (largest US state chamber), ~3,300 people per member, $100/year salary, citizen legislature functioning for generations</b> — NH General Court. <em>Supports:</em> Ordinary citizens CAN serve in a large legislature at community scale (the foundational premise). <span class="dns"><em>Does not support:</em> That NH is better governed as a result; that every detail scales to a national 43,500-member House; multi-party flourishing (NH is overwhelmingly two-party)</span></li><li><b>100x districts would hold about 7,600 people</b> — internal: population / 43,500. <em>Supports:</em> The proposal; scale illustration ('one illustration, not a precise threshold'). <span class="dns"><em>Does not support:</em> A magic number</span></li></ul></details>
+<a class="chainlink" href="../impact/index.html#country">What it changes →</a>
+
+<span class="thread">POWER</span>
+<h2 id="power">Three lanes to the floor — and no gatekeeper who can bury a bill.</h2>
+<p class="kicker">Who decides what gets a vote? In today’s House, a handful of leaders. Here: no one — and everyone.</p>
+<p>The chokepoint isn’t staffed with better people; it’s removed. A bill reaches the floor through any of three lanes.</p>
+<p><strong>It bridges.</strong> A bill advances when it draws support from across caucuses — scored by a published algorithm running on members’ public signals. Support from <em>other</em> factions is what moves it, so a disciplined bloc mass-backing its own bill gets nowhere. This is the normal route, and it filters out divisive squeakers before they reach a vote.</p>
+<p><strong>It’s pushed.</strong> A large coalition of members — a fixed percentage written in the rulebook — can force any bill to the floor with no bridging required. This is the safety valve for bold, contested reform: the lane that keeps a consensus system from smothering exactly the kind of transformative idea this site proposes.</p>
+<p><strong>It’s mandatory.</strong> Appropriations, reauthorizations, and defined oversight advance on a fixed calendar, whether or not anyone finds them exciting. The unglamorous business of government never dies in a feed.</p>
+<figure class="ex"><svg viewBox="0 0 960 356" role="img" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;font-family:Barlow,sans-serif"><title>Three lanes to the floor, with the member override around everything</title><rect x="20" y="16" width="920" height="326" rx="10" fill="none" stroke="#d0553f" stroke-width="2.5" stroke-dasharray="9 7"/><text x="480" y="40" font-size="14.5" fill="#d0553f" text-anchor="middle" font-weight="700">THE OVERRIDE — a supermajority of members can route around everything inside this line</text><rect x="48" y="66" width="560" height="72" rx="6" fill="#182740"/><text x="68" y="96" font-size="17" fill="#ede6d7" text-anchor="start" font-weight="800">IT BRIDGES</text><foreignObject x="68" y="104" width="524" height="34"><div xmlns="http://www.w3.org/1999/xhtml" style="font:13.5px/1.25 Barlow,sans-serif;color:#ede6d7;opacity:.92">Support from across caucuses clears the consensus gate — scored by open, published math.</div></foreignObject><path d="M614 102 h56" stroke="#182740" stroke-width="3"/><path d="M666 95 l14 7 l-14 7 z" fill="#182740"/><rect x="48" y="158" width="560" height="72" rx="6" fill="#be3a2b"/><text x="68" y="188" font-size="17" fill="#ede6d7" text-anchor="start" font-weight="800">IT’S PUSHED</text><foreignObject x="68" y="196" width="524" height="34"><div xmlns="http://www.w3.org/1999/xhtml" style="font:13.5px/1.25 Barlow,sans-serif;color:#ede6d7;opacity:.92">A fixed, rulebook-sized coalition of members forces it to the floor — the bold-reform safety valve.</div></foreignObject><path d="M614 194 h56" stroke="#182740" stroke-width="3"/><path d="M666 187 l14 7 l-14 7 z" fill="#182740"/><rect x="48" y="250" width="560" height="72" rx="6" fill="#2c3a52"/><text x="68" y="280" font-size="17" fill="#ede6d7" text-anchor="start" font-weight="800">IT’S MANDATORY</text><foreignObject x="68" y="288" width="524" height="34"><div xmlns="http://www.w3.org/1999/xhtml" style="font:13.5px/1.25 Barlow,sans-serif;color:#ede6d7;opacity:.92">Appropriations, reauthorizations, oversight advance on a fixed calendar — no popularity required.</div></foreignObject><path d="M614 286 h56" stroke="#182740" stroke-width="3"/><path d="M666 279 l14 7 l-14 7 z" fill="#182740"/><rect x="690" y="96" width="212" height="180" rx="8" fill="#be3a2b"/><text x="796" y="156" font-size="20" fill="#ede6d7" text-anchor="middle" font-weight="800">THE FLOOR</text><text x="796" y="186" font-size="15" fill="#ede6d7" text-anchor="middle" font-weight="500">one final vote</text><text x="796" y="208" font-size="15" fill="#ede6d7" text-anchor="middle" font-weight="500">all 43,500 members</text><text x="796" y="230" font-size="14" fill="#f0cdc5" text-anchor="middle" font-weight="500">public · attributable</text><text x="480" y="330" font-size="14.5" fill="#5b6572" text-anchor="middle" font-weight="600">Signals advance bills; only a recorded floor vote can kill one.</text></svg></figure>
+<p>Three rules keep the lanes honest. Signals come from members only — one member, one non-transferable signal, every one public. Signals <em>advance</em> bills; they can never bury one — killing a bill takes a recorded floor vote. And where judgment is irreducible — is this bill genuinely single-subject? genuinely mandatory? — it goes to a <strong>sortition panel</strong>: a few hundred members drawn by lot for that bill alone, deciding with published reasons. A standing committee can be lobbied for years; a panel that didn’t exist last week and won’t exist next week cannot be cultivated. Above all of it sits the override: a supermajority coalition can force a vote past any panel, any administrator, any rule-keeper. No one has to be trusted, because everyone can be routed around.</p>
+<div class="beat"><strong>Two real-world lessons are baked in.</strong> Germany’s Pirate Party let members delegate votes — delegations chained, piled up, and manufactured “super-voters” whose word moved blocs; so here, delegation doesn’t exist, in any form. And Taiwan’s vTaiwan showed that ranking by <em>cross-group agreement</em> surfaces what broad publics actually share, where ranking by raw popularity rewards whoever shouts loudest — its bridging principle carries over, with the honest caveat that vTaiwan informed legislation rather than running a chamber.</div>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>German Pirate Party's LiquidFeedback: ~10% of members ever made accounts; transitive delegation concentrated power in super-voters (one member's vote 'like a decree')</b> — Pirate Party record; press coverage. <em>Supports:</em> Why delegation is banned; why signals are advisory/non-transitive. <span class="dns"><em>Does not support:</em> That member-bounded, non-delegated advisory systems fail the same way</span></li><li><b>Taiwan's vTaiwan/Polis surfaces cross-group consensus (bridging, not popularity); informed dozens of pieces of legislation</b> — vTaiwan record. <em>Supports:</em> The ranking principle (bridge, don't popularity-rank). <span class="dns"><em>Does not support:</em> The whole apparatus (vTaiwan is consultation, not a chamber)</span></li></ul></details>
+<a class="chainlink" href="../impact/index.html#country">What it changes →</a>
+
+<span class="thread">FUNCTION</span>
+<h2 id="function">Committees draft. The floor decides. No one drinks the firehose.</h2>
+<p class="kicker">A modern two-year Congress sees 15,000 or more bills introduced. Who reads them all? No one — and no one has to.</p>
+<p>Every member specializes: a handful of committees, chosen by the member, with a lottery backstop so no domain ever sits empty. Inside their lane, members do the detailed work — hearings, drafting, markup — and cast genuinely informed votes. A body of 43,500 can staff real experts in every domain the government touches; the water-rights person and the pediatric-drug-pricing person can actually exist.</p>
+<p>Outside their lane, members can follow <strong>advisory recommendations</strong> published by committees or colleagues they trust. Advisory means exactly this: a recommendation never casts a vote. The member clicks, under their own name, on their own record, and can ignore any recommendation on any bill. Recommendations are domain-scoped and public; there are no follower counts and no leaderboards to manufacture celebrity signalers. Handing your vote to someone else — delegation — does not exist anywhere in the system.</p>
+<div class="mirror"><table><thead><tr><th>Delegation (banned)</th><th>Advisory signal (how it works here)</th></tr></thead><tbody><tr><td>Casts your vote for you</td><td>Recommends only — you cast every vote, under your name</td></tr><tr><td>Chains and accumulates into super-voters</td><td>Never chains — one member, one non-transferable signal</td></tr><tr><td>Sits unrevoked for years</td><td>Revocable on any bill, instantly</td></tr><tr><td>Opaque</td><td>Public and domain-scoped; no follower leaderboards</td></tr></tbody></table></div>
+<p>The floor itself is a voting venue, not a debating hall. Final votes are cast electronically from the districts, public and attributable. Deliberation lives in committees; coordination lives in caucuses that form and re-form issue by issue.</p>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>A modern two-year Congress sees on the order of 15,000-18,000 bills and resolutions introduced</b> — Congress.gov statistics. <em>Supports:</em> Firehose problem (the filter, not the number, is the answer).</li><li><b>100x districts would hold about 7,600 people</b> — internal: population / 43,500. <em>Supports:</em> The proposal; scale illustration ('one illustration, not a precise threshold'). <span class="dns"><em>Does not support:</em> A magic number</span></li></ul></details>
+<a class="chainlink" href="../impact/index.html#country">What it changes →</a>
+
+<span class="thread">RULES</span>
+<h2 id="rules">Fixed numbers, open math, public votes.</h2>
+<p class="kicker">What keeps this machinery honest? Nothing you have to trust.</p>
+<p>The thresholds are fixed numbers published in the foundational rulebook, changeable only by a broad supermajority — dials bolted down, not turned monthly by a committee. The bridging score is open-source math computed on public votes: a number anyone can recompute, never a verdict someone renders. The instant a human “interprets” the result, that human is a chokepoint — so no human does.</p>
+<p>Bills carry a single-subject rule, already common in state constitutions: a proposal does one nameable thing and reads that way. And everything — every vote, every signal, every override — is public, attributable, tamper-evident, and independently checkable. Sunlight isn’t a courtesy in this design. It’s the enforcement mechanism.</p>
+<a class="chainlink" href="../impact/index.html#district">What it changes →</a>
+
+<h2 id="unresolved">What’s honestly unresolved.</h2>
+<p>Three things, named plainly.</p>
+<p><strong>The exact numbers.</strong> The coalition-lane threshold lives in a Goldilocks band: set it too high and almost nothing moves; too low and the floor floods — and a flooded floor would need triage, which is a gatekeeper sneaking back in. The right settings must be found by stress-testing, then locked into the rulebook. That work is real, and it is undone.</p>
+<p><strong>The keystone assumption.</strong> Specialization only works if members actually do their committee homework rather than rubber-stamping a caucus signal across every domain. The design buys them the time — no fundraising treadmill — but no structure can force diligence. This is the assumption the whole machine leans on hardest.</p>
+<p><strong>The quiet corners.</strong> Domains nobody watches draw the least scrutiny — true of every institution, and true here. Transparency plus a cheaply contestable seat is the realistic mitigation, not a guarantee.</p>
+<p>None of these is hidden, and none is fatal. The standard this design holds itself to is comparative, not absolute: wherever it stays imperfect, the imperfection is smaller, more visible, and easier for ordinary members to correct than its equivalent in the House we have now.</p>
+
+<h2>That’s the machine.</h2>
+<p>Communities drawn honestly, a job ordinary people can afford to hold, three lanes no gatekeeper controls, committees that draft and a floor that decides, and rules that ask for audit instead of trust. What all of it buys — in your district, your state, and the country — is next.</p>
+<a class="chainlink" href="../impact/index.html">See what it changes →</a>
+</main>
+<footer><div class="wrap">
+<div class="ftag">THE PEOPLE HAVE THE POWER.</div>
+<p><a href="../sources/index.html">Sources &amp; Methods</a> — every claim on this site is sourced and rated, including what our sources <em>don’t</em> prove.</p>
+<p>© 2026 100× Democracy</p>
+</div></footer>
+</body></html>

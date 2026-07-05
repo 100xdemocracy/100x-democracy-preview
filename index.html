@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>100× Democracy — The People Have the Power</title>
+<meta name="description" content="100× Democracy — the case for a House of Representatives at community scale.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#ede6d7;--navy:#182740;--red:#be3a2b;--red2:#d0553f;--grid:#cfc6b4;--ink2:#5b6572;--paper:#f7f2e6;--max:920px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--navy);font:18px/1.65 Barlow,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(237,230,215,.97);border-bottom:2px solid var(--navy)}
+.nav .wrap{display:flex;align-items:center;gap:18px;height:64px}
+.nav img{height:34px;display:block}
+.nav .links{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.nav a{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;padding:4px 2px;border-bottom:3px solid transparent}
+.nav a.active{border-bottom-color:var(--red);color:var(--red)}
+.nav a.join{background:var(--red);color:var(--cream);padding:8px 16px;border-bottom:none;border-radius:3px}
+/* headings */
+.pagehead{padding:44px 0 6px}
+h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(34px,5.4vw,52px);line-height:1.06;letter-spacing:.8px;text-transform:uppercase;margin:0 0 8px}
+.dek{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:20px;color:var(--red);margin:0 0 8px}
+h2{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:29px;line-height:1.18;margin:54px 0 10px;scroll-margin-top:84px}
+h3{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:20px;margin:26px 0 6px}
+p{margin:12px 0}
+main{padding-bottom:70px}
+/* components */
+.thread{display:inline-block;background:var(--red);color:var(--cream);font-family:"Barlow Semi Condensed",sans-serif;font-size:12.5px;font-weight:700;letter-spacing:2px;padding:3px 11px;border-radius:3px;margin:0 10px 0 0;vertical-align:3px}
+main.wrap > .thread{margin:44px 0 -40px;vertical-align:baseline}
+.kicker{font-size:16.5px;color:var(--ink2);font-style:italic;margin:2px 0 14px}
+.concede{border-left:4px solid var(--red2);background:var(--paper);padding:10px 16px;margin:16px 0;color:#5a3a34;font-size:17px}
+.beat{border-left:4px solid var(--navy);background:var(--paper);padding:10px 16px;margin:16px 0;color:#2c3a52;font-size:17px}
+.pointer{background:var(--paper);border:2px solid var(--navy);padding:12px 16px;margin:16px 0;font-weight:600}
+.pointer .chainlink{display:inline;margin:0}
+.truthband{background:var(--navy);color:var(--cream);padding:12px 18px;margin:60px 0 -34px;font-family:"Barlow Semi Condensed",sans-serif;font-size:16px;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+.truthband small{display:block;letter-spacing:.3px;font-weight:500;text-transform:none;color:#cfd8e8;margin-top:2px;font-size:14.5px;font-family:Barlow,sans-serif}
+.spinebox{background:var(--navy);color:var(--cream);padding:18px 22px;margin:16px 0;font-family:"Barlow Semi Condensed",sans-serif;font-size:21px;line-height:1.4;font-weight:700}
+.part{font-family:"Barlow Semi Condensed",sans-serif;font-size:13px;font-weight:800;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin:20px 0 2px}
+.chainlink{display:inline-block;margin:14px 24px 4px 0;font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;color:var(--red);font-size:17px;text-decoration:none;border-bottom:2px solid var(--red)}
+.chainlink:hover{color:var(--red2);border-bottom-color:var(--red2)}
+figure.ex{margin:22px 0;padding:18px 14px;background:var(--paper);border:1px solid var(--grid)}
+.video{position:relative;aspect-ratio:16/9;margin:22px 0;background:var(--navy)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.credit{font-size:13.5px;color:var(--ink2);margin:6px 0 0}
+details.src{background:#e4dcc8;border-left:4px solid var(--navy);margin:14px 0;font-size:14.5px}
+details.src summary{cursor:pointer;padding:7px 12px;font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;letter-spacing:.6px;color:var(--ink2)}
+details.src ul{margin:0;padding:4px 16px 12px 30px}
+details.src li{margin:8px 0}
+details.src .dns{color:var(--red)}
+details.faq{background:var(--paper);border:1px solid var(--grid);margin:10px 0;padding:0 16px}
+details.faq summary{cursor:pointer;padding:12px 0;font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:17.5px}
+details.method{font-size:15px;background:var(--paper);border:1px solid var(--grid);padding:0 14px;margin:10px 0}
+details.method summary{cursor:pointer;padding:10px 0;font-weight:700}
+/* tables */
+.mirror table,.statetable{width:100%;border-collapse:collapse;background:#fff;font-size:15.5px}
+.mirror th,.statetable th{background:var(--navy);color:var(--cream);text-align:left;padding:9px 12px;font-family:"Barlow Semi Condensed",sans-serif;letter-spacing:.6px;font-size:14px}
+.mirror td,.statetable td{border:1px solid var(--grid);padding:9px 12px;vertical-align:top}
+.mirror tr td:first-child{color:#5a3a34}
+.mirror tr td:last-child{font-weight:600}
+.statewrap{max-height:520px;overflow:auto;border:1px solid var(--grid);margin:14px 0 4px}
+.statetable thead th{position:sticky;top:0}
+.statetable td:nth-child(n+2){text-align:right;font-variant-numeric:tabular-nums}
+.statetable tr.gain td{background:#e7ecdd}
+.statetable tr.loss td{background:#f3e2dd}
+.tablenote{font-size:14.5px;color:var(--ink2)}
+.gaindot,.lossdot{display:inline-block;width:12px;height:12px;margin:0 4px -1px 0}
+.gaindot{background:#e7ecdd;border:1px solid var(--grid)}.lossdot{background:#f3e2dd;border:1px solid var(--grid)}
+.figpair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+.figpair img{width:100%;height:auto;display:block;border:1px solid var(--grid)}
+.figpair figcaption{font-size:14.5px;color:var(--ink2);margin-top:6px}
+@media(max-width:700px){.figpair{grid-template-columns:1fr}}
+/* home */
+.hero{padding:56px 0 8px}
+.tagline{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:14px;letter-spacing:4px;color:var(--red)}
+.heronums{font-family:Anton,sans-serif;font-size:clamp(44px,8vw,76px);letter-spacing:1px;margin:8px 0 2px}
+.heronums .arrow,.heronums .b{color:var(--red)}
+.heronums span{margin-right:14px}
+.lede{font-size:20px;max-width:760px}
+.card{background:var(--paper);border:1px solid var(--grid);border-left:6px solid var(--red);padding:14px 18px;margin:14px 0}
+.card .t{font-family:"Barlow Semi Condensed",sans-serif;font-size:13px;font-weight:800;letter-spacing:2.4px;color:var(--red)}
+.card .prob{font-weight:600;margin:6px 0 2px}
+.card .prom{color:#2c3a52;margin:2px 0 4px}
+.card .chainlink{margin-top:6px;font-size:15.5px}
+/* sequence */
+ol.seq{counter-reset:s;list-style:none;padding:0;margin:16px 0}
+ol.seq li{counter-increment:s;margin:14px 0;padding-left:46px;position:relative}
+ol.seq li::before{content:counter(s);position:absolute;left:0;top:1px;width:30px;height:30px;background:var(--navy);color:var(--cream);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:15px}
+.joinblock{background:var(--red);color:var(--cream);padding:20px 24px;margin:26px 0;font-family:"Barlow Semi Condensed",sans-serif}
+.joinblock b{font-size:22px;letter-spacing:1px}
+.joinblock p{margin:6px 0 0;font-family:Barlow,sans-serif;font-size:15.5px;color:#f3d9d3}
+/* footer */
+footer{background:var(--navy);color:var(--cream);margin-top:40px}
+footer .wrap{padding:30px 0 36px}
+footer .ftag{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;letter-spacing:3px;font-size:13px;color:var(--red2)}
+footer p{font-size:14.5px;color:#cfd8e8}
+footer a{color:var(--cream)}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body>
+<nav class="nav"><div class="wrap"><a href="index.html"><img src="assets/logo-header.png" alt="100× Democracy — home"></a><div class="links"><a href="the-problem/index.html">The Problem</a><a href="the-solution/index.html">The Solution</a><a href="how-it-works/index.html">How It Works</a><a href="impact/index.html">Impact</a><a href="big-questions/index.html">Big Questions</a><a href="how-we-win/index.html">How We Win</a><a class="join" href="how-we-win/index.html#act-now">Join</a></div></div></nav>
+
+<main class="wrap">
+<section class="hero">
+<div class="tagline">THE PEOPLE HAVE THE POWER.</div>
+<div class="heronums"><span class="a">435</span><span class="arrow">→</span><span class="b">43,500</span></div>
+<h1>The person your community trusts should be able to run for Congress — and win.</h1>
+<p class="lede">100× Democracy is the case for a House of Representatives one hundred times larger: districts of about 7,600 neighbors instead of 760,000 strangers, so ordinary people can enter their government instead of watching it.</p>
+<p><a class="chainlink" href="the-problem/index.html">Start with the problem →</a> <a class="chainlink" href="how-we-win/index.html#act-now">Join the movement →</a></p>
+</section>
+
+<section>
+<h2>Two numbers that shouldn’t be able to coexist.</h2>
+<figure class="ex"><svg viewBox="0 0 960 190" role="img" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;font-family:Barlow,sans-serif"><title>86 percent disapprove; 97 percent of incumbents won</title><rect x="0" y="0" width="470" height="190" fill="#182740"/><rect x="490" y="0" width="470" height="190" fill="#be3a2b"/><text x="235" y="108" font-family="Anton,sans-serif" font-size="84" fill="#ede6d7" text-anchor="middle" letter-spacing="1">86%</text><text x="235" y="148" font-size="17" fill="#ede6d7" text-anchor="middle" font-weight="500">of Americans disapprove of Congress</text><text x="235" y="170" font-size="13" fill="#b9c3d6" text-anchor="middle" font-weight="500">Gallup, April 2026 — tying the record</text><text x="725" y="108" font-family="Anton,sans-serif" font-size="84" fill="#ede6d7" text-anchor="middle" letter-spacing="1">97%</text><text x="725" y="148" font-size="17" fill="#ede6d7" text-anchor="middle" font-weight="500">of House incumbents who ran won anyway</text><text x="725" y="170" font-size="13" fill="#f0cdc5" text-anchor="middle" font-weight="500">2024 elections</text></svg></figure>
+<p>Numbers like these can only coexist in a system where voters have no real alternative. That system has a specific structure — and a specific history.</p>
+<a class="chainlink" href="the-problem/index.html#paradox">Why this keeps happening →</a>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>86% of Americans disapprove of Congress; 10% approve (ties record high)</b> — Gallup, April 2026. <em>Supports:</em> The paradox opener; public rejection of Congress. <span class="dns"><em>Does not support:</em> Any specific cause of disapproval</span></li><li><b>~97% of congressional incumbents who ran were reelected in 2024</b> — U.S. Term Limits via Quorum, 2024 cycle. <em>Supports:</em> Elections fail as correction mechanism. <span class="dns"><em>Does not support:</em> That incumbents are uniformly unpopular in-district</span></li></ul></details>
+</section>
+
+<section>
+<h2>Five threads. One cause. Follow any of them through the whole site.</h2>
+<div class="card"><div class="t">SCALE</div><p class="prob">Your representative serves 760,000 people.</p><p class="prom">They could serve a community that actually knows them.</p><a class="chainlink" href="the-problem/index.html#scale">Follow this thread →</a></div>
+<div class="card"><div class="t">MONEY</div><p class="prob">A competitive run for Congress costs about $2.3 million.</p><p class="prom">A community-scale campaign could cost about $20,000.</p><a class="chainlink" href="the-problem/index.html#money">Follow this thread →</a></div>
+<div class="card"><div class="t">POWER</div><p class="prob">435 seats concentrate power a few hands can steer.</p><p class="prom">43,500 seats — spread too wide for any clique to hold.</p><a class="chainlink" href="the-problem/index.html#power">Follow this thread →</a></div>
+<div class="card"><div class="t">FUNCTION</div><p class="prob">Two whipped blocs that can barely decide anything.</p><p class="prom">Fluid coalitions deciding issue by issue, in the open.</p><a class="chainlink" href="the-problem/index.html#function">Follow this thread →</a></div>
+<div class="card"><div class="t">RULES</div><p class="prob">A process only insiders can follow.</p><p class="prom">Rules anyone can read — and check.</p><a class="chainlink" href="the-problem/index.html#rules">Follow this thread →</a></div>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>One U.S. House member represents about 760,000 people</b> — Census apportionment population / 435. <em>Supports:</em> Scale diagnosis.</li><li><b>An illustrative competitive House campaign: ~$2.3M over 15 months (~$5,000/day raised)</b> — internal illustrative model (V3), consistent with reported competitive-race ranges. <em>Supports:</em> Money barrier anatomy. <span class="dns"><em>Does not support:</em> A universal average (label ILLUSTRATIVE on the exhibit)</span></li></ul></details>
+</section>
+
+<section>
+<h2>The proposal, in one breath.</h2>
+<p>Divide the country into districts the size of an actual community — about 7,600 people — and the House comes to roughly 43,500 members. At that scale, reputation outcompetes money, neighbors outcompete networks, and Congress becomes something a community can send one of its own into. Not bigness for its own sake. The relationship.</p>
+<a class="chainlink" href="the-solution/index.html">Read the case →</a>
+</section>
+
+<section>
+<h2>Yes, it’s hard. It’s also legal, mapped, and been done before.</h2>
+<p>This requires a constitutional amendment — a bar this site treats as appropriate and never hides. There is a real path through the states, and it has been walked before: the movement that made senators answerable to voters did it one state resolution at a time.</p>
+<a class="chainlink" href="how-we-win/index.html">See how we win →</a> <a class="chainlink" href="how-we-win/index.html#act-now">Join the movement →</a>
+</section>
+</main>
+<footer><div class="wrap">
+<div class="ftag">THE PEOPLE HAVE THE POWER.</div>
+<p><a href="sources/index.html">Sources &amp; Methods</a> — every claim on this site is sourced and rated, including what our sources <em>don’t</em> prove.</p>
+<p>© 2026 100× Democracy</p>
+</div></footer>
+</body></html>

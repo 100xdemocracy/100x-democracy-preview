@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Solution — 100× Democracy</title>
+<meta name="description" content="100× Democracy — the case for a House of Representatives at community scale.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#ede6d7;--navy:#182740;--red:#be3a2b;--red2:#d0553f;--grid:#cfc6b4;--ink2:#5b6572;--paper:#f7f2e6;--max:920px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--navy);font:18px/1.65 Barlow,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(237,230,215,.97);border-bottom:2px solid var(--navy)}
+.nav .wrap{display:flex;align-items:center;gap:18px;height:64px}
+.nav img{height:34px;display:block}
+.nav .links{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.nav a{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;padding:4px 2px;border-bottom:3px solid transparent}
+.nav a.active{border-bottom-color:var(--red);color:var(--red)}
+.nav a.join{background:var(--red);color:var(--cream);padding:8px 16px;border-bottom:none;border-radius:3px}
+/* headings */
+.pagehead{padding:44px 0 6px}
+h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(34px,5.4vw,52px);line-height:1.06;letter-spacing:.8px;text-transform:uppercase;margin:0 0 8px}
+.dek{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:20px;color:var(--red);margin:0 0 8px}
+h2{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:29px;line-height:1.18;margin:54px 0 10px;scroll-margin-top:84px}
+h3{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:20px;margin:26px 0 6px}
+p{margin:12px 0}
+main{padding-bottom:70px}
+/* components */
+.thread{display:inline-block;background:var(--red);color:var(--cream);font-family:"Barlow Semi Condensed",sans-serif;font-size:12.5px;font-weight:700;letter-spacing:2px;padding:3px 11px;border-radius:3px;margin:0 10px 0 0;vertical-align:3px}
+main.wrap > .thread{margin:44px 0 -40px;vertical-align:baseline}
+.kicker{font-size:16.5px;color:var(--ink2);font-style:italic;margin:2px 0 14px}
+.concede{border-left:4px solid var(--red2);background:var(--paper);padding:10px 16px;margin:16px 0;color:#5a3a34;font-size:17px}
+.beat{border-left:4px solid var(--navy);background:var(--paper);padding:10px 16px;margin:16px 0;color:#2c3a52;font-size:17px}
+.pointer{background:var(--paper);border:2px solid var(--navy);padding:12px 16px;margin:16px 0;font-weight:600}
+.pointer .chainlink{display:inline;margin:0}
+.truthband{background:var(--navy);color:var(--cream);padding:12px 18px;margin:60px 0 -34px;font-family:"Barlow Semi Condensed",sans-serif;font-size:16px;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+.truthband small{display:block;letter-spacing:.3px;font-weight:500;text-transform:none;color:#cfd8e8;margin-top:2px;font-size:14.5px;font-family:Barlow,sans-serif}
+.spinebox{background:var(--navy);color:var(--cream);padding:18px 22px;margin:16px 0;font-family:"Barlow Semi Condensed",sans-serif;font-size:21px;line-height:1.4;font-weight:700}
+.part{font-family:"Barlow Semi Condensed",sans-serif;font-size:13px;font-weight:800;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin:20px 0 2px}
+.chainlink{display:inline-block;margin:14px 24px 4px 0;font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;color:var(--red);font-size:17px;text-decoration:none;border-bottom:2px solid var(--red)}
+.chainlink:hover{color:var(--red2);border-bottom-color:var(--red2)}
+figure.ex{margin:22px 0;padding:18px 14px;background:var(--paper);border:1px solid var(--grid)}
+.video{position:relative;aspect-ratio:16/9;margin:22px 0;background:var(--navy)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.credit{font-size:13.5px;color:var(--ink2);margin:6px 0 0}
+details.src{background:#e4dcc8;border-left:4px solid var(--navy);margin:14px 0;font-size:14.5px}
+details.src summary{cursor:pointer;padding:7px 12px;font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;letter-spacing:.6px;color:var(--ink2)}
+details.src ul{margin:0;padding:4px 16px 12px 30px}
+details.src li{margin:8px 0}
+details.src .dns{color:var(--red)}
+details.faq{background:var(--paper);border:1px solid var(--grid);margin:10px 0;padding:0 16px}
+details.faq summary{cursor:pointer;padding:12px 0;font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:17.5px}
+details.method{font-size:15px;background:var(--paper);border:1px solid var(--grid);padding:0 14px;margin:10px 0}
+details.method summary{cursor:pointer;padding:10px 0;font-weight:700}
+/* tables */
+.mirror table,.statetable{width:100%;border-collapse:collapse;background:#fff;font-size:15.5px}
+.mirror th,.statetable th{background:var(--navy);color:var(--cream);text-align:left;padding:9px 12px;font-family:"Barlow Semi Condensed",sans-serif;letter-spacing:.6px;font-size:14px}
+.mirror td,.statetable td{border:1px solid var(--grid);padding:9px 12px;vertical-align:top}
+.mirror tr td:first-child{color:#5a3a34}
+.mirror tr td:last-child{font-weight:600}
+.statewrap{max-height:520px;overflow:auto;border:1px solid var(--grid);margin:14px 0 4px}
+.statetable thead th{position:sticky;top:0}
+.statetable td:nth-child(n+2){text-align:right;font-variant-numeric:tabular-nums}
+.statetable tr.gain td{background:#e7ecdd}
+.statetable tr.loss td{background:#f3e2dd}
+.tablenote{font-size:14.5px;color:var(--ink2)}
+.gaindot,.lossdot{display:inline-block;width:12px;height:12px;margin:0 4px -1px 0}
+.gaindot{background:#e7ecdd;border:1px solid var(--grid)}.lossdot{background:#f3e2dd;border:1px solid var(--grid)}
+.figpair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+.figpair img{width:100%;height:auto;display:block;border:1px solid var(--grid)}
+.figpair figcaption{font-size:14.5px;color:var(--ink2);margin-top:6px}
+@media(max-width:700px){.figpair{grid-template-columns:1fr}}
+/* home */
+.hero{padding:56px 0 8px}
+.tagline{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:14px;letter-spacing:4px;color:var(--red)}
+.heronums{font-family:Anton,sans-serif;font-size:clamp(44px,8vw,76px);letter-spacing:1px;margin:8px 0 2px}
+.heronums .arrow,.heronums .b{color:var(--red)}
+.heronums span{margin-right:14px}
+.lede{font-size:20px;max-width:760px}
+.card{background:var(--paper);border:1px solid var(--grid);border-left:6px solid var(--red);padding:14px 18px;margin:14px 0}
+.card .t{font-family:"Barlow Semi Condensed",sans-serif;font-size:13px;font-weight:800;letter-spacing:2.4px;color:var(--red)}
+.card .prob{font-weight:600;margin:6px 0 2px}
+.card .prom{color:#2c3a52;margin:2px 0 4px}
+.card .chainlink{margin-top:6px;font-size:15.5px}
+/* sequence */
+ol.seq{counter-reset:s;list-style:none;padding:0;margin:16px 0}
+ol.seq li{counter-increment:s;margin:14px 0;padding-left:46px;position:relative}
+ol.seq li::before{content:counter(s);position:absolute;left:0;top:1px;width:30px;height:30px;background:var(--navy);color:var(--cream);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:15px}
+.joinblock{background:var(--red);color:var(--cream);padding:20px 24px;margin:26px 0;font-family:"Barlow Semi Condensed",sans-serif}
+.joinblock b{font-size:22px;letter-spacing:1px}
+.joinblock p{margin:6px 0 0;font-family:Barlow,sans-serif;font-size:15.5px;color:#f3d9d3}
+/* footer */
+footer{background:var(--navy);color:var(--cream);margin-top:40px}
+footer .wrap{padding:30px 0 36px}
+footer .ftag{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;letter-spacing:3px;font-size:13px;color:var(--red2)}
+footer p{font-size:14.5px;color:#cfd8e8}
+footer a{color:var(--cream)}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body>
+<nav class="nav"><div class="wrap"><a href="../index.html"><img src="../assets/logo-header.png" alt="100× Democracy — home"></a><div class="links"><a href="../the-problem/index.html">The Problem</a><a class="active" href="../the-solution/index.html">The Solution</a><a href="../how-it-works/index.html">How It Works</a><a href="../impact/index.html">Impact</a><a href="../big-questions/index.html">Big Questions</a><a href="../how-we-win/index.html">How We Win</a><a class="join" href="../how-we-win/index.html#act-now">Join</a></div></div></nav>
+<div class="pagehead wrap"><h1>The Solution</h1><p class="dek">Why 100× changes the system at its source</p></div>
+<main class="wrap">
+<h2 id="premise">Ordinary people should be able to govern themselves.</h2>
+<p>The American promise was self-government — a government of the people, by the people. Not one that occasionally asks the people’s opinion, but one the people actually run.</p>
+<p>The test isn’t whether we hold elections. It’s whether ordinary people can enter and shape their government, or can only stand outside and watch it. Right now, for almost everyone, it’s watching — the previous page traced why. This page is the fix, and that one idea is its standard: it is the reason for everything below, the promise of what a fix delivers, and the test every piece must pass. If a change doesn’t put real power closer to ordinary people’s hands, it doesn’t count.</p>
+
+<h2 id="proposal">The proposal: make the districts the size of an actual community.</h2>
+<p>Around 7,600 people — a few adjoining neighborhoods. Divide the country into districts that size and the House of Representatives comes to roughly 43,500 members: about one hundred times today’s chamber.</p>
+<p>There is no magic in either number. What matters is the scale: small enough that a candidate can reach a meaningful share of voters face to face, that local reputation counts for more than mass media, and that a person can run without first building a fundraising network. Districts in the low thousands create that kind of relationship; 7,600 is one illustration, not a threshold.</p>
+<div class="pointer">Districts this small require a constitutional amendment — the Constitution currently bars districts smaller than 30,000 people. That bar, and the path through it, is its own page: <a class="chainlink" href="../how-we-win/index.html">How We Win →</a></div>
+<p>Stated coldly, 43,500 sounds radical. In scale, it is. The next three sections show why it is also the plain conclusion of three intuitions most people already hold.</p>
+<figure class="ex"><svg viewBox="0 0 960 332" role="img" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;font-family:Barlow,sans-serif"><title>435 to 43,500 seats; 760,000 to 7,600 people per district</title><text x="200" y="96" font-family="Anton,sans-serif" font-size="72" fill="#182740" text-anchor="middle" letter-spacing="1">435</text><text x="480" y="96" font-family="Anton,sans-serif" font-size="60" fill="#be3a2b" text-anchor="middle" letter-spacing="1">→</text><text x="760" y="96" font-family="Anton,sans-serif" font-size="72" fill="#be3a2b" text-anchor="middle" letter-spacing="1">43,500</text><text x="480" y="132" font-size="16" fill="#5b6572" text-anchor="middle" font-weight="500">seats in the House</text><line x1="80" y1="158" x2="880" y2="158" stroke="#cfc6b4" stroke-width="2"/><text x="200" y="240" font-family="Anton,sans-serif" font-size="58" fill="#182740" text-anchor="middle" letter-spacing="1">760,000</text><text x="480" y="240" font-family="Anton,sans-serif" font-size="60" fill="#be3a2b" text-anchor="middle" letter-spacing="1">→</text><text x="760" y="240" font-family="Anton,sans-serif" font-size="58" fill="#be3a2b" text-anchor="middle" letter-spacing="1">7,600</text><text x="480" y="276" font-size="16" fill="#5b6572" text-anchor="middle" font-weight="500">people per district</text><text x="480" y="312" font-size="18" fill="#182740" text-anchor="middle" font-weight="700">The scale is the point.</text></svg></figure>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>100x districts would hold about 7,600 people</b> — internal: population / 43,500. <em>Supports:</em> The proposal; scale illustration ('one illustration, not a precise threshold'). <span class="dns"><em>Does not support:</em> A magic number</span></li><li><b>One U.S. House member represents about 760,000 people</b> — Census apportionment population / 435. <em>Supports:</em> Scale diagnosis.</li><li><b>The Constitution bars more than one representative per 30,000 people — a floor on district size, capping the House at roughly 11,000-11,300 today</b> — U.S. Const. Art. I §2; arithmetic on current population. <em>Supports:</em> Why 7,600-person districts REQUIRE an amendment (load-bearing constraint).</li></ul></details>
+
+<div class="truthband">Truth 1 — Bring representation close enough to know<small>The closer a government is, the better it represents you.</small></div>
+
+<span class="thread">SCALE</span>
+<h2 id="scale">Representation becomes a relationship again.</h2>
+<p class="kicker">What would it mean for your representative to actually represent you?</p>
+<p>Representation is a relationship, and relationships don’t scale forever. A person can know, and be known by, a community of a few thousand. No one can know 760,000. Past a certain size, representing people stops meaning knowing them and starts meaning managing them from a distance — the representative learns about you through polls, and you encounter them through advertisements. You’ve lived the difference: a city councilmember might answer your email; your member of Congress sends a form letter.</p>
+<p>At 7,600, the relationship inverts. Your representative lives nearby, shares your roads and schools and local economy, and is reachable at the grocery store and the school board meeting. And closeness creates what distance never can: real accountability. A seat of 760,000 is too expensive for almost anyone credible to challenge. Shrink the community and a challenge becomes possible — so the person holding the seat has to keep deserving it.</p>
+<div class="concede">Closeness isn’t automatically virtuous, and the honest version of this argument says so. A small district can be leaned on by a dominant employer, a political machine, a prominent family — and a representative reachable at the grocery store is reachable by pressure, too. The advantage isn’t that local power disappears; it’s that local power is visible, contained, and contestable in a way power exercised from a distant capital never is. Safeguards would still be needed.</div>
+<p>None of this is an invention. It’s a restoration. The House grew with the country for 120 years; the founders worried about districts becoming too <em>large</em>, not the chamber too big — Washington’s only substantive intervention at the Constitutional Convention was to make districts smaller, and Madison’s first proposed amendment was written to force the House to keep growing. This proposal goes much further than they did, and says so plainly. But it extends an American principle; it doesn’t import a foreign one.</p>
+<figure class="figpair"><div><img src="../assets/map-today.jpg" alt="A congressional district today" loading="lazy"><figcaption>Today: one representative for about 760,000 people.</figcaption></div><div><img src="../assets/map-100x.jpg" alt="A 100x district: a few adjoining neighborhoods" loading="lazy"><figcaption>100×: one representative for about 7,600 — a few adjoining neighborhoods.</figcaption></div></figure>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>One U.S. House member represents about 760,000 people</b> — Census apportionment population / 435. <em>Supports:</em> Scale diagnosis.</li><li><b>100x districts would hold about 7,600 people</b> — internal: population / 43,500. <em>Supports:</em> The proposal; scale illustration ('one illustration, not a precise threshold'). <span class="dns"><em>Does not support:</em> A magic number</span></li><li><b>For the country's first ~120 years the House grew with population, decade after decade</b> — House historical apportionment record. <em>Supports:</em> Restoration framing.</li><li><b>Washington's rare substantive intervention at the Convention supported lowering the ratio from 1:40,000 to 1:30,000; his first veto concerned apportionment</b> — Convention records; veto record. <em>Supports:</em> Founders worried about distance, not size. <span class="dns"><em>Does not support:</em> That founders designed a 43,500-member House (they did not)</span></li><li><b>Madison's 'Article the First' — the first amendment ever proposed — was designed to keep the House growing; it fell one state short by the end of 1791 and remains technically pending</b> — Bill of Rights ratification record. <em>Supports:</em> The road not taken; restoration framing; How We Win reprise. <span class="dns"><em>Does not support:</em> That it would reach 43,500 (its formula lands ~6,000; a separate amendment is still required)</span></li></ul></details>
+<a class="chainlink" href="../big-questions/index.html#districts">Pressure-tested →</a>
+
+<span class="thread">MONEY</span>
+<h2 id="money">A campaign your community can actually afford.</h2>
+<p class="kicker">What does running look like when the district is 7,600 people — roughly 3,000 households in a few adjoining neighborhoods?</p>
+<p>It looks like a neighborhood effort. A basic website, printed pamphlets, two district-wide mailers, community meetings, some targeted digital, signs, and compliance — on the order of $20,000, not $2.3 million. It looks like you and nine friends dividing a map: three hundred doors each, Saturdays for a month. At this scale, door-knocking, volunteers, and standing reputation outcompete mass media — which means the test changes. Not: can you raise millions and assemble a political network? But: can you earn the trust of 7,600 people who can find out who you are?</p>
+<p>The same shift snaps the money leash. Leadership’s control over big campaign accounts is powerful today because members need that money to survive districts this expensive. It goes slack when a seat can be won through a community instead of a media market.</p>
+<div class="concede">Campaign spending and outside influence don’t disappear at any scale — money will still show up. What shrinks is dependence: the institutional support a credible person needs before they can even compete. That is the calibrated claim, and it is enough.</div>
+<p>And the payoff runs to voters, not just candidates: choice among kinds of people who were never on the menu — the nurse, the electrician, the teacher, the small-business owner your community already trusts.</p>
+<figure class="ex"><svg viewBox="0 0 960 270" role="img" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;font-family:Barlow,sans-serif"><title>A twenty-thousand-dollar campaign at the same scale</title><text x="40" y="26" font-size="14" fill="#be3a2b" text-anchor="start" font-weight="700">ILLUSTRATIVE COMMUNITY-SCALE CAMPAIGN — DRAWN TO THE SAME SCALE</text><rect x="40" y="62" width="880" height="34" fill="none" stroke="#cfc6b4" stroke-width="2" stroke-dasharray="7 6"/><text x="910" y="85" font-size="14" fill="#5b6572" text-anchor="end" font-weight="500">the $2.3M campaign</text><rect x="40" y="62" width="7.6521739130434785" height="34" fill="#be3a2b"/><line x1="47.65217391304348" y1="79" x2="160" y2="48" stroke="#be3a2b" stroke-width="2"/><text x="168" y="54" font-family="Anton,sans-serif" font-size="36" fill="#be3a2b" text-anchor="start" letter-spacing="1">$20,000</text><text x="40" y="148" font-size="15" fill="#182740" text-anchor="start" font-weight="500">Website & pamphlets — $3k</text><text x="490" y="148" font-size="15" fill="#182740" text-anchor="start" font-weight="500">Two district-wide mailers — $5k</text><text x="40" y="178" font-size="15" fill="#182740" text-anchor="start" font-weight="500">Signs & events — $3k</text><text x="490" y="178" font-size="15" fill="#182740" text-anchor="start" font-weight="500">Targeted digital — $4k</text><text x="40" y="208" font-size="15" fill="#182740" text-anchor="start" font-weight="500">Software, accounting & compliance — $3k</text><text x="490" y="208" font-size="15" fill="#182740" text-anchor="start" font-weight="500">Transport & unexpected — $2k</text><text x="40" y="246" font-size="15.5" fill="#5b6572" text-anchor="start" font-weight="600">Ten people around a table, $50 each, gets it started.</text></svg></figure>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>An illustrative competitive House campaign: ~$2.3M over 15 months (~$5,000/day raised)</b> — internal illustrative model (V3), consistent with reported competitive-race ranges. <em>Supports:</em> Money barrier anatomy. <span class="dns"><em>Does not support:</em> A universal average (label ILLUSTRATIVE on the exhibit)</span></li><li><b>100x districts would hold about 7,600 people</b> — internal: population / 43,500. <em>Supports:</em> The proposal; scale illustration ('one illustration, not a precise threshold'). <span class="dns"><em>Does not support:</em> A magic number</span></li></ul></details>
+<a class="chainlink" href="../big-questions/index.html#cost">Pressure-tested →</a>
+
+<div class="truthband">Truth 2 — Spread power out<small>Concentrated power is easier to capture.</small></div>
+
+<span class="thread">POWER</span>
+<h2 id="power">Power no small group can hold.</h2>
+<p class="kicker">Why would 43,500 seats be safer than 435?</p>
+<p>Because concentrated power fails in three ways at once — cheaper to influence, more damaging when abused, harder to correct — and spreading it out changes all three. Influence gets harder, because moving the system takes far more people. Abuse gets less catastrophic, because any one actor matters less. Correction gets easier, because no one holds enough power to entrench themselves.</p>
+<p>This is not a new idea. It is one of the oldest in the American system — separation of powers, checks and balances, the federal-state division all come from the founders’ conviction that concentrated power is dangerous and must be divided. The proposal takes that instinct seriously and pushes it further, inside the House itself. And it is built the way the founders built: for self-interest, not virtue. A good system doesn’t depend on electing saints. It assumes people will pursue their interests and arranges power so no interest can easily dominate — ambition made to check ambition, extended to 43,500 seats.</p>
+<p>What happens to leadership? It changes species. Today’s leadership power is control: the calendar, the committee seats, the campaign money — careers owned, votes following. In a chamber where members don’t need leadership’s money and no clique can dominate 43,500 careers, what remains is persuasion. Power earned repeatedly from people free to refuse is more legitimate — and far easier to contest — than power held through money and procedure.</p>
+<div class="concede">Influence, organization, and unequal power all survive; some members will matter more than others in any system. The claim is comparative and stands anyway: concentrated power becomes harder to buy, harder to monopolize, and easier to contest.</div>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>100x districts would hold about 7,600 people</b> — internal: population / 43,500. <em>Supports:</em> The proposal; scale illustration ('one illustration, not a precise threshold'). <span class="dns"><em>Does not support:</em> A magic number</span></li></ul></details>
+<a class="chainlink" href="../big-questions/index.html#capture">Pressure-tested →</a>
+
+<span class="thread">FUNCTION</span>
+<h2 id="function">A House that can finally decide.</h2>
+<p class="kicker">How does a body of 43,500 decide anything? By not doing the thing you’re picturing.</p>
+<p>The picture — 43,500 people in one room, all writing laws at once — isn’t how any legislature works, including today’s. Detailed drafting already happens in committees of a few dozen; the floor’s job is the final vote. The proposal simply unbundles what the current House fuses: committees do the detailed work, and the full membership — each member with an equal, public vote — keeps the final say.</p>
+<p>Scale, surprisingly, helps. A body of 43,500 has enough people to staff genuine specialist committees in every domain, instead of stretching a few hundred generalists across everything the federal government touches. And the disease of the current chamber — two whipped blocs voting on command — gets structurally harder to sustain: you cannot herd 43,500 members whose careers you don’t own into two rigid teams. Coalitions turn fluid, forming issue by issue. That is the opposite of gridlock, because gridlock requires stable opposing armies.</p>
+<div class="concede">Whole-body deliberation — 43,500 people reasoning together as one conversation — never happens, and isn’t supposed to. Deliberation lives in committees; decision belongs to the full body. That division of labor is the design, not a defect it hides.</div>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>100x districts would hold about 7,600 people</b> — internal: population / 43,500. <em>Supports:</em> The proposal; scale illustration ('one illustration, not a precise threshold'). <span class="dns"><em>Does not support:</em> A magic number</span></li></ul></details>
+<a class="chainlink" href="../big-questions/index.html#chaos">Pressure-tested →</a>
+
+<div class="truthband">Truth 3 — Keep the rules checkable<small>A rule you can understand is a rule you can check.</small></div>
+
+<span class="thread">RULES</span>
+<h2 id="rules">Rules an ordinary person can read.</h2>
+<p class="kicker">Could a system this large stay simple enough to check?</p>
+<p>The democratic rules can — and in this design, must. A rule you can understand is a rule you can check. A rule only experts can follow is one they can quietly work to their advantage while everyone else takes it on faith. That’s not a style preference; it’s a safeguard. If ordinary people can’t follow the basic rules, the rules belong to insiders rather than the public — which is precisely where today’s House lives.</p>
+<p>One distinction keeps this claim honest. Policy is often genuinely technical — tax law, weapons systems, banking regulation — and no reform makes it simple, nor does any citizen have to master it. The claim is narrower: the <em>democratic</em> rules — who may propose, how something reaches a vote, how it may be amended, who is accountable for the result — stay simple enough for an ordinary person to follow even when the policy they govern is not. In this design that’s a construction requirement, not a hope: equal public votes, published fixed thresholds, and no gatekeeper with the quiet power to bury a proposal forever.</p>
+<div class="concede">There is a real tension here, and the design carries it openly: some machinery is needed to make a body this large work, and every added mechanism costs some simplicity. Where that trade gets made, and how it stays honest, is pressure-tested in the questions.</div>
+<a class="chainlink" href="../big-questions/index.html#complexity">Pressure-tested →</a>
+
+<h2 id="why-100x">Why 100× and not 10×?</h2>
+<p>There is a serious, mainstream debate about enlarging the House — to 585 seats, or the cube-root’s ~592, or the ~689 in the live bill before Congress. Those proposals are real, and directionally right. And every one of them would leave districts of half a million people or more: still a city’s worth of strangers, still a mass-media campaign costing millions, still a relationship no human being can maintain. A modest increase changes the number. It does not change the nature of the relationship.</p>
+<p>Everything on this page — the campaign a community can afford, the money leash gone slack, reputation outcompeting media, a chamber no clique can whip — switches on only when districts shrink to community scale, in the thousands. That is the affirmative case for the scale. Not bigness for its own sake. The relationship.</p>
+<div class="mirror"><table><thead><tr><th>Today</th><th>At 100×</th></tr></thead><tbody><tr><td>One representative manages 760,000 strangers</td><td>One representative knows a community of 7,600</td></tr><tr><td>Reaching voters requires mass media</td><td>Reaching voters means door-knocking and reputation</td></tr><tr><td>Entry costs about $2.3 million</td><td>Entry is a community effort — about $20,000</td></tr><tr><td>Careers depend on donors and leadership</td><td>Careers answer to neighbors</td></tr><tr><td>435 capturable seats</td><td>43,500 seats no clique can hold</td></tr><tr><td>Two whipped blocs</td><td>Fluid coalitions, issue by issue</td></tr><tr><td>Rules only insiders can follow</td><td>Rules anyone can read and check</td></tr></tbody></table></div>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>Mainstream expansion proposals: AAAS +150 (585), Wyoming Rule (~577), cube-root (~592), REAL House Act (585)</b> — AAAS 'Our Common Purpose'; respective proposals. <em>Supports:</em> The diagnosis is mainstream; why-100x-not-10x contrast. <span class="dns"><em>Does not support:</em> 43,500 or community-scale districts (they explicitly stop far short)</span></li><li><b>Rep. Sean Casten's Equal Voices Act (reintroduced June 2025, 119th Congress) would cap districts at ~500,000 people, growing the House to ~689 seats (+~230), with a multi-member/RCV option; part of his 'Common Sense Vision for American Democracy' package</b> — casten.house.gov press release, June 2025; Congressional Digest; Vox (Feb 2026) built around the bill. <em>Supports:</em> A sitting member of Congress has a live expansion bill validating the diagnosis, current-year salience. <span class="dns"><em>Does not support:</em> Community-scale districts (its ~500,000-person districts are ~65x larger than 7,600); the amendment path (it is statutory)</span></li><li><b>Taagepera's cube-root rule implies ~690-700 seats for the US; most large democracies sit near their cube root</b> — Taagepera; comparative legislature sizes. <em>Supports:</em> The strongest scholarly framework pointing the other direction (foil). <span class="dns"><em>Does not support:</em> That 43,500 deliberates better than 690 (design rejects the deliberation premise, optimizes representation/accountability)</span></li><li><b>An illustrative competitive House campaign: ~$2.3M over 15 months (~$5,000/day raised)</b> — internal illustrative model (V3), consistent with reported competitive-race ranges. <em>Supports:</em> Money barrier anatomy. <span class="dns"><em>Does not support:</em> A universal average (label ILLUSTRATIVE on the exhibit)</span></li></ul></details>
+
+<h2 id="close">The tiebreaker.</h2>
+<p>Parts of this design will sometimes pull against each other — spreading power can add procedure; adding procedure can cost simplicity. When they do, one question decides: <strong>does this put real power in ordinary people’s hands, or does it merely move it between elites?</strong> A clever mechanism only specialists can operate hasn’t given power to the people; it has handed it to a new set of insiders. When in doubt, choose the version that keeps power closest to ordinary people — even when it’s less clever.</p>
+<p>That is the case. The machinery comes next.</p>
+<a class="chainlink" href="../how-it-works/index.html">See how it would govern →</a>
+</main>
+<footer><div class="wrap">
+<div class="ftag">THE PEOPLE HAVE THE POWER.</div>
+<p><a href="../sources/index.html">Sources &amp; Methods</a> — every claim on this site is sourced and rated, including what our sources <em>don’t</em> prove.</p>
+<p>© 2026 100× Democracy</p>
+</div></footer>
+</body></html>

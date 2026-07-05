@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Big Questions — 100× Democracy</title>
+<meta name="description" content="100× Democracy — the case for a House of Representatives at community scale.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#ede6d7;--navy:#182740;--red:#be3a2b;--red2:#d0553f;--grid:#cfc6b4;--ink2:#5b6572;--paper:#f7f2e6;--max:920px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--navy);font:18px/1.65 Barlow,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(237,230,215,.97);border-bottom:2px solid var(--navy)}
+.nav .wrap{display:flex;align-items:center;gap:18px;height:64px}
+.nav img{height:34px;display:block}
+.nav .links{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.nav a{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;padding:4px 2px;border-bottom:3px solid transparent}
+.nav a.active{border-bottom-color:var(--red);color:var(--red)}
+.nav a.join{background:var(--red);color:var(--cream);padding:8px 16px;border-bottom:none;border-radius:3px}
+/* headings */
+.pagehead{padding:44px 0 6px}
+h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(34px,5.4vw,52px);line-height:1.06;letter-spacing:.8px;text-transform:uppercase;margin:0 0 8px}
+.dek{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:20px;color:var(--red);margin:0 0 8px}
+h2{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:29px;line-height:1.18;margin:54px 0 10px;scroll-margin-top:84px}
+h3{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:20px;margin:26px 0 6px}
+p{margin:12px 0}
+main{padding-bottom:70px}
+/* components */
+.thread{display:inline-block;background:var(--red);color:var(--cream);font-family:"Barlow Semi Condensed",sans-serif;font-size:12.5px;font-weight:700;letter-spacing:2px;padding:3px 11px;border-radius:3px;margin:0 10px 0 0;vertical-align:3px}
+main.wrap > .thread{margin:44px 0 -40px;vertical-align:baseline}
+.kicker{font-size:16.5px;color:var(--ink2);font-style:italic;margin:2px 0 14px}
+.concede{border-left:4px solid var(--red2);background:var(--paper);padding:10px 16px;margin:16px 0;color:#5a3a34;font-size:17px}
+.beat{border-left:4px solid var(--navy);background:var(--paper);padding:10px 16px;margin:16px 0;color:#2c3a52;font-size:17px}
+.pointer{background:var(--paper);border:2px solid var(--navy);padding:12px 16px;margin:16px 0;font-weight:600}
+.pointer .chainlink{display:inline;margin:0}
+.truthband{background:var(--navy);color:var(--cream);padding:12px 18px;margin:60px 0 -34px;font-family:"Barlow Semi Condensed",sans-serif;font-size:16px;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+.truthband small{display:block;letter-spacing:.3px;font-weight:500;text-transform:none;color:#cfd8e8;margin-top:2px;font-size:14.5px;font-family:Barlow,sans-serif}
+.spinebox{background:var(--navy);color:var(--cream);padding:18px 22px;margin:16px 0;font-family:"Barlow Semi Condensed",sans-serif;font-size:21px;line-height:1.4;font-weight:700}
+.part{font-family:"Barlow Semi Condensed",sans-serif;font-size:13px;font-weight:800;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin:20px 0 2px}
+.chainlink{display:inline-block;margin:14px 24px 4px 0;font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;color:var(--red);font-size:17px;text-decoration:none;border-bottom:2px solid var(--red)}
+.chainlink:hover{color:var(--red2);border-bottom-color:var(--red2)}
+figure.ex{margin:22px 0;padding:18px 14px;background:var(--paper);border:1px solid var(--grid)}
+.video{position:relative;aspect-ratio:16/9;margin:22px 0;background:var(--navy)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.credit{font-size:13.5px;color:var(--ink2);margin:6px 0 0}
+details.src{background:#e4dcc8;border-left:4px solid var(--navy);margin:14px 0;font-size:14.5px}
+details.src summary{cursor:pointer;padding:7px 12px;font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;letter-spacing:.6px;color:var(--ink2)}
+details.src ul{margin:0;padding:4px 16px 12px 30px}
+details.src li{margin:8px 0}
+details.src .dns{color:var(--red)}
+details.faq{background:var(--paper);border:1px solid var(--grid);margin:10px 0;padding:0 16px}
+details.faq summary{cursor:pointer;padding:12px 0;font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:17.5px}
+details.method{font-size:15px;background:var(--paper);border:1px solid var(--grid);padding:0 14px;margin:10px 0}
+details.method summary{cursor:pointer;padding:10px 0;font-weight:700}
+/* tables */
+.mirror table,.statetable{width:100%;border-collapse:collapse;background:#fff;font-size:15.5px}
+.mirror th,.statetable th{background:var(--navy);color:var(--cream);text-align:left;padding:9px 12px;font-family:"Barlow Semi Condensed",sans-serif;letter-spacing:.6px;font-size:14px}
+.mirror td,.statetable td{border:1px solid var(--grid);padding:9px 12px;vertical-align:top}
+.mirror tr td:first-child{color:#5a3a34}
+.mirror tr td:last-child{font-weight:600}
+.statewrap{max-height:520px;overflow:auto;border:1px solid var(--grid);margin:14px 0 4px}
+.statetable thead th{position:sticky;top:0}
+.statetable td:nth-child(n+2){text-align:right;font-variant-numeric:tabular-nums}
+.statetable tr.gain td{background:#e7ecdd}
+.statetable tr.loss td{background:#f3e2dd}
+.tablenote{font-size:14.5px;color:var(--ink2)}
+.gaindot,.lossdot{display:inline-block;width:12px;height:12px;margin:0 4px -1px 0}
+.gaindot{background:#e7ecdd;border:1px solid var(--grid)}.lossdot{background:#f3e2dd;border:1px solid var(--grid)}
+.figpair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+.figpair img{width:100%;height:auto;display:block;border:1px solid var(--grid)}
+.figpair figcaption{font-size:14.5px;color:var(--ink2);margin-top:6px}
+@media(max-width:700px){.figpair{grid-template-columns:1fr}}
+/* home */
+.hero{padding:56px 0 8px}
+.tagline{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:14px;letter-spacing:4px;color:var(--red)}
+.heronums{font-family:Anton,sans-serif;font-size:clamp(44px,8vw,76px);letter-spacing:1px;margin:8px 0 2px}
+.heronums .arrow,.heronums .b{color:var(--red)}
+.heronums span{margin-right:14px}
+.lede{font-size:20px;max-width:760px}
+.card{background:var(--paper);border:1px solid var(--grid);border-left:6px solid var(--red);padding:14px 18px;margin:14px 0}
+.card .t{font-family:"Barlow Semi Condensed",sans-serif;font-size:13px;font-weight:800;letter-spacing:2.4px;color:var(--red)}
+.card .prob{font-weight:600;margin:6px 0 2px}
+.card .prom{color:#2c3a52;margin:2px 0 4px}
+.card .chainlink{margin-top:6px;font-size:15.5px}
+/* sequence */
+ol.seq{counter-reset:s;list-style:none;padding:0;margin:16px 0}
+ol.seq li{counter-increment:s;margin:14px 0;padding-left:46px;position:relative}
+ol.seq li::before{content:counter(s);position:absolute;left:0;top:1px;width:30px;height:30px;background:var(--navy);color:var(--cream);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;font-size:15px}
+.joinblock{background:var(--red);color:var(--cream);padding:20px 24px;margin:26px 0;font-family:"Barlow Semi Condensed",sans-serif}
+.joinblock b{font-size:22px;letter-spacing:1px}
+.joinblock p{margin:6px 0 0;font-family:Barlow,sans-serif;font-size:15.5px;color:#f3d9d3}
+/* footer */
+footer{background:var(--navy);color:var(--cream);margin-top:40px}
+footer .wrap{padding:30px 0 36px}
+footer .ftag{font-family:"Barlow Semi Condensed",sans-serif;font-weight:800;letter-spacing:3px;font-size:13px;color:var(--red2)}
+footer p{font-size:14.5px;color:#cfd8e8}
+footer a{color:var(--cream)}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body>
+<nav class="nav"><div class="wrap"><a href="../index.html"><img src="../assets/logo-header.png" alt="100× Democracy — home"></a><div class="links"><a href="../the-problem/index.html">The Problem</a><a href="../the-solution/index.html">The Solution</a><a href="../how-it-works/index.html">How It Works</a><a href="../impact/index.html">Impact</a><a class="active" href="../big-questions/index.html">Big Questions</a><a href="../how-we-win/index.html">How We Win</a><a class="join" href="../how-we-win/index.html#act-now">Join</a></div></div></nav>
+<div class="pagehead wrap"><h1>Big Questions</h1><p class="dek">A proposal this large deserves serious scrutiny.</p></div>
+<main class="wrap">
+<p>Every question below gets the same treatment: the concern stated at full strength, what’s genuinely risky about it conceded before anything is answered, what the design does about it, and what remains honestly uncertain after that. Nothing on this page is declared solved. The standard throughout is comparative — wherever a problem remains, the claim is that it is smaller, more visible, and easier to correct than its equivalent in the House we have now.</p>
+
+<span class="thread">FUNCTION</span>
+<h2 id="chaos">Wouldn’t 43,500 members be total chaos?</h2>
+<p class="part">The concern</p>
+<p>Forty-three thousand people can’t run a meeting, let alone a country. The mental image is immediate: an arena of shouting legislators, nothing ever decided.</p>
+<p class="part">What’s genuinely risky</p>
+<p>The real danger is the opposite of the image. Very large assemblies don’t historically fail by noise — they fail by silence: collapsing into a small inner circle that holds the real power while the full body ratifies. The world’s largest legislature today, China’s National People’s Congress (~2,900 members, capped at 3,000), meets about two weeks a year while a 175-member Standing Committee passes most of the country’s laws; scholars describe the full body as a rubber stamp. That — not shouting — is the failure mode a 43,500-member House must be designed against.</p>
+<p class="part">How the design answers it</p>
+<p>First, the image is wrong about every legislature, including today’s: 435 members don’t write laws together on a floor either. Drafting happens in committees of a few dozen; the floor’s job is the final vote — here, cast electronically from the districts. Scale that up and the picture holds; being larger even helps, because 43,500 members can staff genuine specialists in every domain instead of stretching generalists across all of them.</p>
+<p>Against the rubber-stamp failure, the design’s answer is structural: the NPC’s full body has no way to route around its inner committee — and this design is drains all the way down. Members can force consideration past any gatekeeper; a coalition lane can push any bill to a vote; the override outranks every panel and administrator. An inner circle can’t bury what it doesn’t control.</p>
+<p>And the premise has an existence proof, inside the United States. New Hampshire’s House has 400 members — the largest state chamber in the country — each representing about 3,300 people, next door to Massachusetts where each state representative serves roughly 44,000. Its members are paid $100 a year and keep their ordinary lives: teachers, contractors, nurses, retirees, business owners, occasionally college students. The chamber holds hearings, drafts in committee, debates, and votes — and has for generations. Ordinary citizens serving in a large legislature at community scale isn’t a fantasy. It’s a working American institution.</p>
+<p class="part">What remains uncertain</p>
+<p>New Hampshire is one relatively small state, not a country; it proves the foundational premise, not every detail of a national chamber a hundred times larger. And the NPC’s warning stays live: the drains only protect a body whose members actually use them. The exact thresholds that keep the lanes working are among the design’s named unresolveds.</p>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>China's NPC (~2,900 members, capped at 3,000) delegates real lawmaking to a 175-member Standing Committee; widely described as a rubber stamp</b> — NPC structure; scholarly consensus. <em>Supports:</em> The failure mode the drains exist to prevent (honest cautionary tale). <span class="dns"><em>Does not support:</em> That large size CAUSES rubber-stamping (the absence of member routes around the inner body did)</span></li><li><b>New Hampshire's House: 400 members (largest US state chamber), ~3,300 people per member, $100/year salary, citizen legislature functioning for generations</b> — NH General Court. <em>Supports:</em> Ordinary citizens CAN serve in a large legislature at community scale (the foundational premise). <span class="dns"><em>Does not support:</em> That NH is better governed as a result; that every detail scales to a national 43,500-member House; multi-party flourishing (NH is overwhelmingly two-party)</span></li><li><b>Each Massachusetts state representative serves roughly 44,000 people</b> — 160 seats / MA population. <em>Supports:</em> NH contrast.</li></ul></details>
+<a class="chainlink" href="../how-it-works/index.html#function">The mechanics →</a>
+
+<span class="thread">POWER</span>
+<h2 id="capture">Wouldn’t leaders, staff, or insiders just control it anyway?</h2>
+<p class="part">The concern</p>
+<p>An equal vote isn’t equal power. No member can read thousands of bills, so members will lean on someone — staff, chairs, party researchers, trusted colleagues — and whoever they lean on holds the real power. Scholars raise exactly this: political scientist Ruth Bloch Rubin has argued that enlarging the House could <em>strengthen</em> leadership, because larger assemblies tend to delegate more to it, not less.</p>
+<p class="part">What’s genuinely risky</p>
+<p>The risk is real, and it has been watched happen. When Germany’s Pirate Party let members delegate their votes, the delegations chained and piled up until a handful of “super-voters” moved blocs — a newspaper described one member’s accumulated vote as functioning like a decree. And in any system, permanent professional staff hold deep, quiet power: rotating amateurs over a permanent machine means the machine governs. Power doesn’t vanish when you distribute it; it migrates to wherever discretion still lives.</p>
+<p class="part">How the design answers it</p>
+<p>By starving discretion rather than staffing it with better people. The thresholds are fixed numbers in a rulebook only a broad supermajority can change — dials bolted down, not turned by a committee. The bridging score is open math on public votes that anyone can recompute. The judgment calls that can’t be mechanized go to sortition panels — a few hundred members drawn by lot, per bill, deciding with published reasons; a panel that didn’t exist last week can’t be cultivated. And above everything sits the members’ override. As for the leaning problem: recommendations here are advisory, never delegated — a signal can’t cast your vote, is domain-scoped, public, revocable on any bill, and there are no follower leaderboards to manufacture celebrity signalers. What about parties? The labels persist — New Hampshire’s community-scale chamber is still overwhelmingly two-party — but the leverage doesn’t: leadership can’t own careers it doesn’t fund and can’t gatekeep a floor it doesn’t control. Control gives way to persuasion, and persuasion must be earned repeatedly from people free to refuse.</p>
+<p class="part">What remains uncertain</p>
+<p>Trusted specialists still shape outcomes, especially in quiet domains nobody watches — influence there is bounded, visible, and contestable, but it is influence. And software maintainers are the permanent-staff trap in new clothes. The honest scorecard: today’s version of this power is global, binding, opaque, and durable; this design’s version is domain-bounded, advisory, public, and revocable per bill. Demoted and relocated — not eliminated.</p>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>German Pirate Party's LiquidFeedback: ~10% of members ever made accounts; transitive delegation concentrated power in super-voters (one member's vote 'like a decree')</b> — Pirate Party record; press coverage. <em>Supports:</em> Why delegation is banned; why signals are advisory/non-transitive. <span class="dns"><em>Does not support:</em> That member-bounded, non-delegated advisory systems fail the same way</span></li><li><b>AEI hosted 'Should the House of Representatives Be Expanded?' — right-leaning venue engaging the question with AAAS/New America participants</b> — aei.org/events/should-the-house-of-representatives-be-expanded/. <em>Supports:</em> Cross-partisan seriousness of the diagnosis; Bloch Rubin counterargument (expansion strengthens leaders) as honest counter-evidence. <span class="dns"><em>Does not support:</em> 43,500</span></li><li><b>New Hampshire's House: 400 members (largest US state chamber), ~3,300 people per member, $100/year salary, citizen legislature functioning for generations</b> — NH General Court. <em>Supports:</em> Ordinary citizens CAN serve in a large legislature at community scale (the foundational premise). <span class="dns"><em>Does not support:</em> That NH is better governed as a result; that every detail scales to a national 43,500-member House; multi-party flourishing (NH is overwhelmingly two-party)</span></li></ul></details>
+<a class="chainlink" href="../how-it-works/index.html#power">The mechanics →</a>
+
+<span class="thread">MONEY</span>
+<h2 id="cost">Wouldn’t it cost a fortune — and don’t cheap seats invite cheap corruption?</h2>
+<p class="part">The concern</p>
+<p>Two versions, one shallow and one sharp. Shallow: 43,500 salaries and a place to put everyone. Sharp: today, buying a vote means cultivating one of 435 wealthy, scrutinized people — expensive and conspicuous. A citizen-legislator from a district of 7,600 is a softer target. The unit price of influence drops, and “distributed bribery” — thousands of small inducements, each under every detection threshold — replaces the big scandal that watchdogs know how to catch.</p>
+<p class="part">What’s genuinely risky</p>
+<p>The sharp version is genuinely sharp. The unit price of influence really does drop, and that should be owned, not waved away.</p>
+<p class="part">How the design answers it</p>
+<p>The shallow version first, plainly: cost is the weakest common objection. Even 43,500 full salaries come to a fraction of one percent of federal spending, and there is no Capitol-capacity crisis because members work from their districts. The sharp version gets a real answer in three parts. A bought bloc is a faction — and the bridging gate specifically discounts single-faction support, so money that buys 4,000 aligned votes still can’t clear the gate. Every vote is public and attributable, so the <em>pattern</em> of distributed bribery — a cluster of members suddenly voting against their districts’ interests in unison — becomes statistically visible even when each instance is small; at scale, transparency turns the diffuse-fog problem around. And removability inverts: a member caught taking small money in a 7,600-person seat can be cheaply unseated, where today’s incumbents are insulated by the very cost of challenging them.</p>
+<p class="part">What remains uncertain</p>
+<p>Whether pattern-detection outpaces deliberately fragmented influence operations is an empirical question no design can settle in advance. The honest framing is a trade, not a solution: swapping a few expensive, powerful, hard-to-remove targets for many cheap, visible, easy-to-remove ones. Plausibly a better trade — never “corruption-proof.”</p>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>43,500 full congressional salaries ≈ a fraction of one percent of federal spending</b> — arithmetic vs. federal budget. <em>Supports:</em> Cost is the weakest objection. <span class="dns"><em>Does not support:</em> That total institutional cost (staff, systems) is trivial — scope the claim to salaries</span></li><li><b>~97% of congressional incumbents who ran were reelected in 2024</b> — U.S. Term Limits via Quorum, 2024 cycle. <em>Supports:</em> Elections fail as correction mechanism. <span class="dns"><em>Does not support:</em> That incumbents are uniformly unpopular in-district</span></li></ul></details>
+<a class="chainlink" href="../how-it-works/index.html#money">The mechanics →</a>
+
+<span class="thread">SCALE</span>
+<h2 id="districts">Wouldn’t tiny districts empower local bullies, invite gerrymandering — and would anyone even pay attention to 43,500 races?</h2>
+<p class="part">The concern</p>
+<p>Three worries wearing one label. A district of 7,600 could be dominated by the town’s biggest employer, a political machine, a prominent family. Drawing 43,500 lines sounds like a gerrymanderer’s paradise. And voters who barely track one congressional race won’t track thousands.</p>
+<p class="part">What’s genuinely risky</p>
+<p>Local capture is real: a representative reachable at the grocery store is reachable by pressure, too, and safeguards against local coercion would genuinely be needed. And smallness alone is not districting integrity — binding, enforceable fair-districting rules are still required, full stop.</p>
+<p class="part">How the design answers it</p>
+<p>On bullies: the advantage of local power isn’t that it disappears — it’s that it is visible, contained, and contestable in a way capture in a distant capital never is, and it doesn’t scale: a machine that owns one seat owns 1/43,500th of the House. A fringe candidate who wins a 7,600-person district is one voice that must bridge across caucuses to matter; the gate discounts faction-only support by construction. On gerrymandering: at 7,600 people, lines can follow real neighborhoods and towns, which makes sprawling, unnatural shapes harder to draw and harder to justify — a help, not a substitute, for enforceable rules. On attention: the question assumes today’s information economics, where following a race means following media coverage of a stranger. At 7,600, the race reaches you — the candidate is someone your neighbors know, and the campaign knocks on your door. New Hampshire’s voters have filled a 400-seat chamber this way for generations.</p>
+<p class="part">What remains uncertain</p>
+<p>The safeguards against local coercion are named as needed, not yet designed. Districting rules must actually be enforced — the design makes honest maps easier, not inevitable. And attention at national scale is untested; New Hampshire is suggestive, not proof.</p>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>New Hampshire's House: 400 members (largest US state chamber), ~3,300 people per member, $100/year salary, citizen legislature functioning for generations</b> — NH General Court. <em>Supports:</em> Ordinary citizens CAN serve in a large legislature at community scale (the foundational premise). <span class="dns"><em>Does not support:</em> That NH is better governed as a result; that every detail scales to a national 43,500-member House; multi-party flourishing (NH is overwhelmingly two-party)</span></li><li><b>100x districts would hold about 7,600 people</b> — internal: population / 43,500. <em>Supports:</em> The proposal; scale illustration ('one illustration, not a precise threshold'). <span class="dns"><em>Does not support:</em> A magic number</span></li></ul></details>
+<a class="chainlink" href="../how-it-works/index.html#scale">The mechanics →</a>
+
+<span class="thread">RULES</span>
+<h2 id="complexity">Isn’t this machinery too complicated to trust — and doesn’t running Congress on software invite disaster?</h2>
+<p class="part">The concern</p>
+<p>Bridging algorithms, sortition panels, three lanes, fixed thresholds — a Rube Goldberg legislature nobody will understand. And it all runs on code: bugs, manipulation, and the people who maintain it.</p>
+<p class="part">What’s genuinely risky</p>
+<p>Two things, and both cut close to this project’s own values. Every mechanism added for safety costs some simplicity, and the project’s third principle is that ordinary people must be able to check the rules — so complexity is a cost paid in the currency this design cares most about. On software: verifiability does not solve coercion — a perfectly auditable ledger faithfully records a vote that was pressured or paid for — and code maintainers can become a technical priesthood, the permanent-staff trap rebuilt in software.</p>
+<p class="part">How the design answers it</p>
+<p>Distinguish hidden complexity from legible complexity. Today’s system is simple to state — “435 people vote” — and opaque in operation: almost no citizen can explain how an omnibus is assembled, what the Rules Committee just decided, or why a popular bill died without a vote. This design is more complex to state and legible by construction: the thresholds are fixed and published, the score is open-source math anyone can recompute, every vote is public and attributable. Rules you can audit beat simplicity you must take on faith. On software: cryptographic verifiability closes the tampering-and-miscount category entirely — anyone can confirm the recorded votes are the cast votes and the math ran correctly. What it can’t verify is freedom, and the design doesn’t claim otherwise; instead the arithmetic of coercion improves about a hundredfold — one compromised vote moves 1/43,500th of the chamber instead of 1/435th, and a compromised bloc still can’t clear the bridging gate.</p>
+<p class="part">What remains uncertain</p>
+<p>The deepest open fork in the whole project lives here: a deliberately <em>simpler</em> machine — accepting some dysfunction the clever mechanisms remove — might beat a sophisticated one citizens can’t follow. That choice is presented as open, because it is. And outcome legibility is a real cost even when rule legibility improves: shifting issue-by-issue coalitions govern better but narrate worse than “the two parties fought.”</p>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>German Pirate Party's LiquidFeedback: ~10% of members ever made accounts; transitive delegation concentrated power in super-voters (one member's vote 'like a decree')</b> — Pirate Party record; press coverage. <em>Supports:</em> Why delegation is banned; why signals are advisory/non-transitive. <span class="dns"><em>Does not support:</em> That member-bounded, non-delegated advisory systems fail the same way</span></li><li><b>Taiwan's vTaiwan/Polis surfaces cross-group consensus (bridging, not popularity); informed dozens of pieces of legislation</b> — vTaiwan record. <em>Supports:</em> The ranking principle (bridge, don't popularity-rank). <span class="dns"><em>Does not support:</em> The whole apparatus (vTaiwan is consultation, not a chamber)</span></li></ul></details>
+<a class="chainlink" href="../how-it-works/index.html#rules">The mechanics →</a>
+
+<span class="thread">OFF-MATRIX</span>
+<h2 id="why-not-other-reforms">Why not campaign-finance reform, ranked-choice voting, or proportional representation instead?</h2>
+<p class="part">The concern</p>
+<p>Every one of those reforms is more achievable than a constitutional amendment. Why chase the moonshot?</p>
+<p class="part">What’s genuinely risky</p>
+<p>The premise is correct and should be conceded cleanly: they are more achievable, and several are worth pursuing on their own merits. This site argues against none of them.</p>
+<p class="part">How the design answers it</p>
+<p>None of them touches scale. Publicly finance a campaign that must reach 760,000 strangers and it is still an industrial campaign — mass media, professional staff, a year of your life; the funding source changes, the relationship doesn’t. Ranked-choice voting changes how votes are counted among candidates who could already afford to reach 760,000 people. Proportional representation changes how seats are allocated, while constituencies stay enormous — and under multi-member districts, typically get bigger. Term limits change which strangers manage you. Each of these improves who wins the existing relationship between citizens and Congress. Only scale changes the relationship itself — and the relationship is the disease.</p>
+<p class="part">What remains uncertain</p>
+<p>Sequencing. A modest statutory expansion — uncapping the House — could precede the amendment and de-risk it by putting growth back into lived reality. Whether to treat that as a step or a detour is a strategy question, and it lives on the next page.</p>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>Mainstream expansion proposals: AAAS +150 (585), Wyoming Rule (~577), cube-root (~592), REAL House Act (585)</b> — AAAS 'Our Common Purpose'; respective proposals. <em>Supports:</em> The diagnosis is mainstream; why-100x-not-10x contrast. <span class="dns"><em>Does not support:</em> 43,500 or community-scale districts (they explicitly stop far short)</span></li><li><b>The Atlantic (David Litt, May 2020): 'Congress Needs to Be Way, Way Bigger' — argues the House should be two to three times larger (~870-1,300 seats); explicitly calls a ~6,500-member Madison-formula House 'a bit unwieldy'</b> — The Atlantic, May 5, 2020 (David Litt), full text provided by Danny 2026-07-05. <em>Supports:</em> The diagnosis (distance, freeze history, 1920 reapportionment refusal, unresponsiveness) and the direction (expansion), from a mainstream outlet. <span class="dns"><em>Does not support:</em> Community-scale districts or anything near 43,500 — it rejects even ~6,500 as unwieldy</span></li><li><b>Rep. Sean Casten's Equal Voices Act (reintroduced June 2025, 119th Congress) would cap districts at ~500,000 people, growing the House to ~689 seats (+~230), with a multi-member/RCV option; part of his 'Common Sense Vision for American Democracy' package</b> — casten.house.gov press release, June 2025; Congressional Digest; Vox (Feb 2026) built around the bill. <em>Supports:</em> A sitting member of Congress has a live expansion bill validating the diagnosis, current-year salience. <span class="dns"><em>Does not support:</em> Community-scale districts (its ~500,000-person districts are ~65x larger than 7,600); the amendment path (it is statutory)</span></li></ul></details>
+<a class="chainlink" href="../how-we-win/index.html">The path →</a>
+
+<h2 id="faq">Remaining questions, briefly.</h2>
+<p>Real questions that deserve answers but not essays.</p>
+<details class="faq"><summary>What about the Senate and the President? You’ve fixed one organ of three.</summary>
+<p>Deliberate scope, not evasion. A transformed House still legislates alongside an unchanged Senate and executive, and fixing those is separate work. The House is the first and most tractable place to begin — 100× <em>democracy</em>, not 110× <em>Congress</em>.</p></details>
+<details class="faq"><summary>What happens to the Electoral College?</summary>
+<p>It gets rebalanced toward the popular vote, because electoral votes are House seats plus Senate seats. At 43,500, the EC becomes nearly proportional: Wyoming’s share of electoral votes falls from about 0.56% to about 0.18% — roughly a third of its current weight — while California’s rises from about 10.0% to 11.9%. Splits between the popular vote and the EC become far less likely. This isn’t a side effect the proposal hides; a sitting congressman markets his own modest expansion bill on exactly this rebalancing. What it means for which states ratify is taken up on How We Win.</p></details>
+<details class="faq"><summary>How do you get from 435 to 43,500 without breaking everything?</summary>
+<p>In phases, over multiple election cycles — a sequencing challenge, not a flaw in the destination. The rollout lives on How We Win.</p></details>
+<details class="faq"><summary>Doesn’t this require a constitutional amendment?</summary>
+<p>Yes. Fully, plainly, and by design — the treatment is the whole point of How We Win.</p></details>
+<details class="faq"><summary>Didn’t the founders want a small House?</summary>
+<p>The opposite: they worried districts would grow too large, and the first amendment ever proposed was written to keep the House growing. The history is on The Solution.</p></details>
+<details class="src"><summary>Sources &amp; calibration</summary><ul><li><b>At 43,500 House seats the Electoral College becomes nearly proportional to population: Wyoming's share of electoral votes falls from ~0.56% (3/538) to ~0.18% (~78/~43,700) — about a third of its current weight — while California's rises from ~10.0% to ~11.9%; popular-vote/EC splits become far less likely</b> — arithmetic: 2020 apportionment population, 43,500 seats, EC = House + Senate + DC (capped at least-populous state per 23rd Am.); computed 2026-07-05. <em>Supports:</em> Big Questions FAQ entry; How We Win ratification-incentive analysis.</li><li><b>Rep. Sean Casten's Equal Voices Act (reintroduced June 2025, 119th Congress) would cap districts at ~500,000 people, growing the House to ~689 seats (+~230), with a multi-member/RCV option; part of his 'Common Sense Vision for American Democracy' package</b> — casten.house.gov press release, June 2025; Congressional Digest; Vox (Feb 2026) built around the bill. <em>Supports:</em> A sitting member of Congress has a live expansion bill validating the diagnosis, current-year salience. <span class="dns"><em>Does not support:</em> Community-scale districts (its ~500,000-person districts are ~65x larger than 7,600); the amendment path (it is statutory)</span></li><li><b>Madison's 'Article the First' — the first amendment ever proposed — was designed to keep the House growing; it fell one state short by the end of 1791 and remains technically pending</b> — Bill of Rights ratification record. <em>Supports:</em> The road not taken; restoration framing; How We Win reprise. <span class="dns"><em>Does not support:</em> That it would reach 43,500 (its formula lands ~6,000; a separate amendment is still required)</span></li></ul></details>
+
+<h2>The case has now been pressure-tested.</h2>
+<p>Six hard questions, each answered with its risks conceded and its uncertainties named. What’s left is the only question this site hasn’t answered yet: how something this large actually becomes law.</p>
+<a class="chainlink" href="../how-we-win/index.html">The path →</a>
+</main>
+<footer><div class="wrap">
+<div class="ftag">THE PEOPLE HAVE THE POWER.</div>
+<p><a href="../sources/index.html">Sources &amp; Methods</a> — every claim on this site is sourced and rated, including what our sources <em>don’t</em> prove.</p>
+<p>© 2026 100× Democracy</p>
+</div></footer>
+</body></html>
